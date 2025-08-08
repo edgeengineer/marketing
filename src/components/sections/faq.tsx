@@ -44,10 +44,8 @@ const faqs: Record<Category, FAQ[]> = {
       question: 'How do I install Edge in my project?',
       answer: (
         <>
-          You can install Edge with a single CLI command. It supports popular
-          frameworks like Next.js, Nuxt, SvelteKit, and more. Use our official
-          SDK or connect directly to the GraphQL API. See the{' '}
-          <Link href="#" className="text-secondary underline">
+          You can easily install Edge using `brew` on macOS.
+          <Link href="https://docs.edge.engineer/" className="text-secondary underline" target='_blank'>
             Quickstart Guide
           </Link>{' '}
           for full details.
@@ -57,17 +55,51 @@ const faqs: Record<Category, FAQ[]> = {
     {
       question: 'Is Edge open source?',
       answer:
-        'Yes, Edge is fully open source under the MIT license. You can view, modify, and contribute to the codebase on GitHub. Our cloud offering provides additional enterprise features, but the core CMS is free to use.',
+        'Yes, EdgeOS, Edge Agent and Edge CLI and all the public frameworks are fully open source under the MIT license. You can view, modify, and contribute to the codebase on GitHub. However, our Edge Command Intelligence and Control product is a commercial offering with a subscription model.',
     },
     {
-      question: 'What API types does Edge support?',
-      answer:
-        'Edge provides both GraphQL and REST APIs. The GraphQL API offers a flexible query language with strong typing, while the REST API provides simple HTTP endpoints for common operations. Both APIs are fully documented with SDKs available in multiple languages.',
+      question: 'Why does Edge only support Swift?',
+      answer: (
+        <>
+          At Edge, we believe that the fragmentation of programming languages and tools is the single biggest barrier holding back robotics, IoT, and edge computing. Today, if you search for a tutorial on building for edge devices, you&apos;ll find an inconsistent mess—some in Python, others in C++, Rust, C#, Node.js, or even Ruby. Each project reinvents the wheel, assembling bespoke stacks with different languages for prototyping, production, and performance tuning. This makes collaboration harder, documentation scattered, and onboarding painfully slow.
+          <br /><br />
+          Our solution is to unify the ecosystem under one powerful, modern, and versatile language: Swift. Swift is:
+          <br /><br />
+          <strong>Fast and production-ready</strong> — No need to prototype in one language and rewrite in another for performance.
+          <br /><br />
+          <strong>Deterministic and memory-safe</strong> — Thanks to Automatic Reference Counting (ARC), you get predictable performance without garbage collection pauses.
+          <br /><br />
+          <strong>Interoperable with C and C++</strong> — Giving you an &quot;escape hatch&quot; for high-performance or legacy system integrations without adding complexity.
+          <br /><br />
+          <strong>Readable and modern</strong> — Lowering the barrier to entry for new developers while remaining powerful enough for experts.
+          <br /><br />
+          This is not a new idea—other industries have proven the power of a single-language ecosystem. Unity (C#) and Unreal Engine (C++) transformed game development by creating vertically integrated platforms where developers write in one language and deploy anywhere. These ecosystems thrived because a single language helps a community band together: tutorials, libraries, and tools are shared, understood, and reusable without translation.
+          <br /><br />
+          Edge aims to replicate that same success for the physical intelligent world—robots, drones, autonomous vehicles, satellites, and industrial IoT. By committing to Swift, we:
+          <br /><br />
+          • Eliminate the inefficiency of dual-language workflows.
+          <br />
+          • Create a shared body of knowledge where every blog post, open-source package, and snippet is usable by everyone.
+          <br />
+          • Enable seamless debugging and deployment experiences like pressing &quot;Run&quot; on a mobile app, but for any edge device.
+          <br /><br />
+          A single language isn&apos;t about limiting choice—it&apos;s about amplifying productivity, fostering community, and accelerating innovation. Just as web developers are expected to know JavaScript and Android developers to know Kotlin, we envision a future where edge developers speak Swift as the lingua franca of the industry.
+        </>
+      ),
     },
     {
-      question: 'Can I define content models with code?',
-      answer:
-        'Yes, Edge supports code-first content modeling. You can define your schemas using TypeScript, allowing for version control and type safety. This approach works well with CI/CD pipelines and makes it easy to maintain consistent content structures across environments.',
+      question: 'What kind of AI models can you run on EdgeOS?',
+      answer: (
+        <>
+          We support MLX by Apple, which is an Apache 2.0 array framework machine exchange format. Originally designed purely for Apple Silicon with unified memory, MLX has rapidly grown to include support for CUDA for NVIDIA devices like the Jetson series and soon with ROCm for AMD devices.
+          <br /><br />
+          We recommend visiting{' '}
+          <Link href="https://huggingface.co/mlx-community" className="text-secondary underline" target="_blank">
+            https://huggingface.co/mlx-community
+          </Link>{' '}
+          for AI models.
+        </>
+      ),
     },
   ],
   'Content Editing & Workflow': [

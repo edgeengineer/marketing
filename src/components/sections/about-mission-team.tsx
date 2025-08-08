@@ -12,20 +12,50 @@ import {
 
 const teamMembers = [
   {
-    name: 'Rob Austin',
+    name: 'Maximilian Alexander',
     role: 'Founder',
     company: 'Zerostatic',
-    image: '/images/blog/authors/robert-austin.webp',
+    image: '/images/blog/authors/max-alexander.jpeg',
     github: '#',
     linkedin: '#',
     twitter: '#',
     bio: 'Writes the core and builds the APIs. Loves fast systems, clean code, and black coffee.',
   },
   {
-    name: 'Fedir Davydov',
+    name: 'Mihai Chiorean',
     role: 'Co-founder',
     company: 'Zerostatic',
-    image: '/images/blog/authors/fedir-davydov.webp',
+    image: '/images/blog/authors/mihai-chiorean.jpeg',
+    github: '#',
+    linkedin: '#',
+    twitter: '#',
+    bio: 'Shapes the UI, crafts the experience, and makes sure it feels right.',
+  },
+  {
+    name: 'Hone Komarkowski',
+    role: 'Co-founder',
+    company: 'Zerostatic',
+    image: '/images/blog/authors/hone-komarkowski.jpeg',
+    github: '#',
+    linkedin: '#',
+    twitter: '#',
+    bio: 'Shapes the UI, crafts the experience, and makes sure it feels right.',
+  },
+  {
+    name: 'Joannis Orlandos',
+    role: 'Co-founder',
+    company: 'Zerostatic',
+    image: '/images/blog/authors/joannis-orlandos.jpeg',
+    github: '#',
+    linkedin: '#',
+    twitter: '#',
+    bio: 'Shapes the UI, crafts the experience, and makes sure it feels right.',
+  },
+  {
+    name: 'Ethan Derr',
+    role: 'Engineer',
+    company: 'Zerostatic',
+    image: '/images/blog/authors/joannis-orlandos.jpeg',
     github: '#',
     linkedin: '#',
     twitter: '#',
@@ -46,11 +76,10 @@ export function AboutMissionTeam() {
             </h2>
             <p className="text-muted-foreground text-sm leading-relaxed md:text-base">
               <span className="text-foreground font-medium">
-                The modern content stack is bloated, slow, and often closed.
+                The future of AI in the physical world is on the Edge.
               </span>{' '}
-              Edge started as a simple idea: what if you could have a fast,
-              developer-first content layer that worked out of the box — but
-              didn’t lock you in?
+              Edge started as a simple idea: why is it easy to deploy to the Edge for iOS and Android but impossibly
+              hard for microcontrollers, NVidia Jetson, and Raspberry Pi? We built Edge to empower developers to build AI systems that run on the Edge, from microcontrollers to powerful AI hardware.
             </p>
             <p className="text-muted-foreground text-sm leading-relaxed md:text-base">
               We built Edge to empower teams to model, edit, and{' '}
@@ -86,7 +115,7 @@ export function AboutMissionTeam() {
             </p>
 
             {/* Team Members */}
-            <div className="mt-6 flex flex-col gap-6 md:flex-row">
+            <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {teamMembers.map((member) => (
                 <div key={member.name} className="space-y-3">
                   {/* Desktop: Hover Card */}

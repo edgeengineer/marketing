@@ -90,7 +90,7 @@ const Footer = () => {
   // Prevent hydration mismatch by using a consistent theme class until mounted
   const themeClass =
     mounted && theme === 'dark'
-      ? 'light bg-foreground text-background [&_*]:border-border/30'
+      ? 'dark bg-foreground text-background [&_*]:border-border/30'
       : 'dark bg-background text-foreground';
 
   // Logo should be inverted when footer has light background (dark theme)

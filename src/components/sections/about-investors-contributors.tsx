@@ -1,198 +1,161 @@
-import { Handshake, HeartHandshake } from 'lucide-react';
-import Link from 'next/link';
+import { Handshake } from 'lucide-react';
 
 import { Meteors } from '@/components/magicui/meteors';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
-const investors = [
+const advisoryBoard = [
   {
-    name: 'Cooper Torff',
+    name: 'Chris Turlica',
     role: 'CEO',
-    company: 'Snap',
+    company: 'Maintain X',
   },
   {
-    name: 'Tatiana Bator',
+    name: 'Hugo Dozois-Caouette',
     role: 'CTO',
-    company: 'CodeLab',
+    company: 'Maintain X',
   },
   {
-    name: 'Desirae Donin',
-    role: 'CEO',
-    company: 'ArtBox',
-  },
-  {
-    name: 'Allison Dorwart',
-    role: 'Chairman',
-    company: 'Craft',
-  },
-  {
-    name: 'Desirae Aminoff',
-    role: 'Founding Engineer',
-    company: 'MindSpark',
-  },
-  {
-    name: 'Madelyn Workman',
-    role: 'Founding Engineer',
-    company: 'Drawit',
-  },
-  {
-    name: 'Emerson Septimus',
-    role: 'Founder',
-    company: 'BankTech',
-  },
-  {
-    name: 'Erin Septimus',
-    role: 'CEO',
-    company: 'Visionary',
-  },
-  {
-    name: 'Jaydon Workman',
-    role: 'Growth Engineer',
-    company: 'BuildUp',
-  },
-  {
-    name: 'Giana Philips',
-    role: 'Systems Architect',
-    company: 'TechNest',
+    name: 'Varun Singh',
+    role: 'CTPO',
+    company: 'Daily',
   },
 ];
 
-const contributors = [
-  {
-    username: 'torvalds',
-    commits: 400,
-    avatar: 'https://avatars.githubusercontent.com/u/1024025?v=4',
-    url: 'https://github.com/torvalds',
-  },
-  {
-    username: 'gaearon',
-    commits: 379,
-    avatar: 'https://avatars.githubusercontent.com/u/810438?v=4',
-    url: 'https://github.com/gaearon',
-  },
-  {
-    username: 'sindresorhus',
-    commits: 290,
-    avatar: 'https://avatars.githubusercontent.com/u/170270?v=4',
-    url: 'https://github.com/sindresorhus',
-  },
-  {
-    username: 'customfieldcomponents',
-    commits: 187,
-    avatar: 'https://avatars.githubusercontent.com/u/583231?v=4',
-    url: '#',
-    isLink: true,
-    linkText: 'Custom field components',
-    linkUrl: '#',
-  },
-  {
-    username: 'tj',
-    commits: 150,
-    avatar: 'https://avatars.githubusercontent.com/u/25254?v=4',
-    url: 'https://github.com/tj',
-  },
-  {
-    username: 'addyosmani',
-    commits: 140,
-    avatar: 'https://avatars.githubusercontent.com/u/110953?v=4',
-    url: 'https://github.com/addyosmani',
-  },
-  {
-    username: 'kentcdodds',
-    commits: 135,
-    avatar: 'https://avatars.githubusercontent.com/u/1500684?v=4',
-    url: 'https://github.com/kentcdodds',
-  },
-  {
-    username: 'wesbos',
-    commits: 128,
-    avatar: 'https://avatars.githubusercontent.com/u/176013?v=4',
-    url: 'https://github.com/wesbos',
-  },
-  {
-    username: 'codefirstschemasync',
-    commits: 120,
-    avatar: 'https://avatars.githubusercontent.com/u/4060187?v=4',
-    url: '#',
-    isLink: true,
-    linkText: 'Code-first schema sync',
-    linkUrl: '#',
-  },
-  {
-    username: 'bradtraversy',
-    commits: 115,
-    avatar: 'https://avatars.githubusercontent.com/u/5550850?v=4',
-    url: 'https://github.com/bradtraversy',
-  },
-  {
-    username: 'githubintegration',
-    commits: 110,
-    avatar: 'https://avatars.githubusercontent.com/u/9919?v=4',
-    url: '#',
-    isLink: true,
-    linkText: 'GitHub integration',
-    linkUrl: '#',
-  },
-  {
-    username: 'getify',
-    commits: 105,
-    avatar: 'https://avatars.githubusercontent.com/u/150330?v=4',
-    url: 'https://github.com/getify',
-  },
-  {
-    username: 'yyx990803',
-    commits: 98,
-    avatar: 'https://avatars.githubusercontent.com/u/499550?v=4',
-    url: 'https://github.com/yyx990803',
-  },
-  {
-    username: 'sebmarkbage',
-    commits: 92,
-    avatar: 'https://avatars.githubusercontent.com/u/63648?v=4',
-    url: 'https://github.com/sebmarkbage',
-  },
-  {
-    username: 'paulirish',
-    commits: 87,
-    avatar: 'https://avatars.githubusercontent.com/u/39191?v=4',
-    url: 'https://github.com/paulirish',
-  },
-  {
-    username: 'developit',
-    commits: 82,
-    avatar: 'https://avatars.githubusercontent.com/u/105127?v=4',
-    url: 'https://github.com/developit',
-  },
-  {
-    username: 'rauchg',
-    commits: 78,
-    avatar: 'https://avatars.githubusercontent.com/u/13041?v=4',
-    url: 'https://github.com/rauchg',
-  },
-  {
-    username: 'timneutkens',
-    commits: 73,
-    avatar: 'https://avatars.githubusercontent.com/u/6324199?v=4',
-    url: 'https://github.com/timneutkens',
-  },
-  {
-    username: 'mjackson',
-    commits: 68,
-    avatar: 'https://avatars.githubusercontent.com/u/92839?v=4',
-    url: 'https://github.com/mjackson',
-  },
-  {
-    username: 'ryanflorence',
-    commits: 62,
-    avatar: 'https://avatars.githubusercontent.com/u/100200?v=4',
-    url: 'https://github.com/ryanflorence',
-  },
-];
+// const contributors = [
+//   {
+//     username: 'torvalds',
+//     commits: 400,
+//     avatar: 'https://avatars.githubusercontent.com/u/1024025?v=4',
+//     url: 'https://github.com/torvalds',
+//   },
+//   {
+//     username: 'gaearon',
+//     commits: 379,
+//     avatar: 'https://avatars.githubusercontent.com/u/810438?v=4',
+//     url: 'https://github.com/gaearon',
+//   },
+//   {
+//     username: 'sindresorhus',
+//     commits: 290,
+//     avatar: 'https://avatars.githubusercontent.com/u/170270?v=4',
+//     url: 'https://github.com/sindresorhus',
+//   },
+//   {
+//     username: 'customfieldcomponents',
+//     commits: 187,
+//     avatar: 'https://avatars.githubusercontent.com/u/583231?v=4',
+//     url: '#',
+//     isLink: true,
+//     linkText: 'Custom field components',
+//     linkUrl: '#',
+//   },
+//   {
+//     username: 'tj',
+//     commits: 150,
+//     avatar: 'https://avatars.githubusercontent.com/u/25254?v=4',
+//     url: 'https://github.com/tj',
+//   },
+//   {
+//     username: 'addyosmani',
+//     commits: 140,
+//     avatar: 'https://avatars.githubusercontent.com/u/110953?v=4',
+//     url: 'https://github.com/addyosmani',
+//   },
+//   {
+//     username: 'kentcdodds',
+//     commits: 135,
+//     avatar: 'https://avatars.githubusercontent.com/u/1500684?v=4',
+//     url: 'https://github.com/kentcdodds',
+//   },
+//   {
+//     username: 'wesbos',
+//     commits: 128,
+//     avatar: 'https://avatars.githubusercontent.com/u/176013?v=4',
+//     url: 'https://github.com/wesbos',
+//   },
+//   {
+//     username: 'codefirstschemasync',
+//     commits: 120,
+//     avatar: 'https://avatars.githubusercontent.com/u/4060187?v=4',
+//     url: '#',
+//     isLink: true,
+//     linkText: 'Code-first schema sync',
+//     linkUrl: '#',
+//   },
+//   {
+//     username: 'bradtraversy',
+//     commits: 115,
+//     avatar: 'https://avatars.githubusercontent.com/u/5550850?v=4',
+//     url: 'https://github.com/bradtraversy',
+//   },
+//   {
+//     username: 'githubintegration',
+//     commits: 110,
+//     avatar: 'https://avatars.githubusercontent.com/u/9919?v=4',
+//     url: '#',
+//     isLink: true,
+//     linkText: 'GitHub integration',
+//     linkUrl: '#',
+//   },
+//   {
+//     username: 'getify',
+//     commits: 105,
+//     avatar: 'https://avatars.githubusercontent.com/u/150330?v=4',
+//     url: 'https://github.com/getify',
+//   },
+//   {
+//     username: 'yyx990803',
+//     commits: 98,
+//     avatar: 'https://avatars.githubusercontent.com/u/499550?v=4',
+//     url: 'https://github.com/yyx990803',
+//   },
+//   {
+//     username: 'sebmarkbage',
+//     commits: 92,
+//     avatar: 'https://avatars.githubusercontent.com/u/63648?v=4',
+//     url: 'https://github.com/sebmarkbage',
+//   },
+//   {
+//     username: 'paulirish',
+//     commits: 87,
+//     avatar: 'https://avatars.githubusercontent.com/u/39191?v=4',
+//     url: 'https://github.com/paulirish',
+//   },
+//   {
+//     username: 'developit',
+//     commits: 82,
+//     avatar: 'https://avatars.githubusercontent.com/u/105127?v=4',
+//     url: 'https://github.com/developit',
+//   },
+//   {
+//     username: 'rauchg',
+//     commits: 78,
+//     avatar: 'https://avatars.githubusercontent.com/u/13041?v=4',
+//     url: 'https://github.com/rauchg',
+//   },
+//   {
+//     username: 'timneutkens',
+//     commits: 73,
+//     avatar: 'https://avatars.githubusercontent.com/u/6324199?v=4',
+//     url: 'https://github.com/timneutkens',
+//   },
+//   {
+//     username: 'mjackson',
+//     commits: 68,
+//     avatar: 'https://avatars.githubusercontent.com/u/92839?v=4',
+//     url: 'https://github.com/mjackson',
+//   },
+//   {
+//     username: 'ryanflorence',
+//     commits: 62,
+//     avatar: 'https://avatars.githubusercontent.com/u/100200?v=4',
+//     url: 'https://github.com/ryanflorence',
+//   },
+// ];
 
 export function AboutInvestorsContributors() {
   return (
     <>
-      {/* Investors Section */}
+      {/* Advisory Board Section */}
       <section className="container">
         <div className="bordered-div-padding relative border border-t-0">
           <div className="absolute top-0 right-full -mt-0.25 hidden h-[calc(100%+2px)] w-[50vw] overflow-hidden border-y md:block">
@@ -207,18 +170,18 @@ export function AboutInvestorsContributors() {
           <div className="space-y-6 md:space-y-8 lg:space-y-10">
             <h2 className="text-muted-foreground flex items-center gap-2 text-sm leading-snug font-medium md:text-base">
               <Handshake className="size-5" />
-              Investors
+              Advisory Board
             </h2>
 
             <div className="grid grid-cols-2 gap-6 md:grid-cols-3 md:gap-8 lg:grid-cols-5">
-              {investors.map((investor) => (
+              {advisoryBoard.map((advisor) => (
                 <div
-                  key={investor.name}
+                  key={advisor.name}
                   className="space-y-1 text-sm md:text-base"
                 >
-                  <h3 className="font-medium">{investor.name}</h3>
+                  <h3 className="font-medium">{advisor.name}</h3>
                   <p className="text-muted-foreground">
-                    {investor.role}, {investor.company}
+                    {advisor.role}, {advisor.company}
                   </p>
                 </div>
               ))}
@@ -227,8 +190,8 @@ export function AboutInvestorsContributors() {
         </div>
       </section>
 
-      {/* Contributors Section */}
-      <section className="container">
+      {/* Contributors Section - Commented out for now */}
+      {/* <section className="container">
         <div className="bordered-div-padding border border-t-0">
           <div className="space-y-6 md:space-y-8 lg:space-y-10">
             <h2 className="text-muted-foreground flex items-center gap-2 text-sm leading-snug font-medium md:text-base">
@@ -267,7 +230,7 @@ export function AboutInvestorsContributors() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

@@ -45,7 +45,7 @@ export function Hero() {
             <Logo wordmarkClassName='w-60 invert' />
             <h1 className="font-weight-display text-2xl leading-snug tracking-tighter md:text-3xl lg:text-5xl text-white">
               The easiest and most powerful way to develop {' '}
-              <span className="block">the AI in the physical world.</span>
+              <span className="block">AI in the physical world.</span>
             </h1>
             <p className="text-white/80 mx-auto max-w-[700px] text-sm leading-relaxed md:text-lg lg:text-xl">
               Edge is the easiest and most powerful operating system for building Edge Computing systems. Build Robots, drones, self driving cars, intelligent cameras, terminals, printers, IoT projects as easy as building a mobile app.

@@ -18,8 +18,7 @@ export function AboutHero() {
             <span className="block">Backed by community</span>
           </h1>
           <p className="text-muted-foreground mx-auto max-w-[700px] text-sm leading-relaxed md:text-lg lg:text-xl">
-            Edge is the open content platform that puts speed, control, and
-            freedom in your hands — without giving up collaboration or scale.
+            Edge is the easiest and most powerful operating system for building Edge Computing systems. Build Robots, drones, self-driving cars, intelligent cameras, terminals, printers, IoT projects as easy as building a mobile app.
           </p>
         </div>
 

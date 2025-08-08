@@ -1,7 +1,6 @@
 'use client';
 
 import { ClockFading, Package } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { FaDiscord, FaGithub } from 'react-icons/fa6';
@@ -28,99 +27,91 @@ type RoadmapItem = {
   title: string;
   description: string;
   date: string;
-  team: {
-    name: string;
-    image: string;
-  };
 };
 
 const roadmapItems: RoadmapItem[] = [
   {
     status: 'In Progress',
-    title: 'Live preview editing',
+    title: 'MLX for NVIDIA Jetson devices',
     description:
-      'Let content editors preview their changes in real-time within the CMS editor.',
-    date: 'Beta by May 2025',
-    team: {
-      name: 'Core Team',
-      image: '/layout/logo-icon.svg',
-    },
+      'Develop MLX on your computer and run MLX on NVidia Jetson devices. MLX now has multiple backends including CUDA for NVIDIA Jetson devices and soon ROCm for AMD devices. With MLX, we have a single framework for running both training and inference on edge devices but specialized unified memory architectures common on Apple and NVIDIA Jetson devices.',
+    date: 'Beta by October 2025',
   },
   {
     status: 'In Progress',
-    title: 'SvelteKit plugin',
-    description: 'First-class Edge support for SvelteKit via a plugin.',
+    title: 'USB Internet Sharing',
+    description: 'Flashing an EdgeOS device and plugging it into a computer will use internet sharing to provide internet access to the EdgeOS device which is especially helpful for upgrade packages, refreshing certificates, and running apps that need the broader internet',
     date: 'Q2 2025',
-    team: {
-      name: 'Core Team',
-      image: '/layout/logo-icon.svg',
-    },
+  },
+  {
+    status: 'In Progress',
+    title: 'Transport Services',
+    description:
+      "A Cross Platform Swift 6 implementation of RFC9622, affectionately nicknamed 'TAPS' but professionall known as Transport Services, is a new way to write network applications that are portable across platforms without diving into the intracacies of low level sockets. TAPS is to what React did for the DOM.",
+    date: 'Q3 2025',
+  },
+  {
+    status: 'In Progress',
+    title: 'Cross Platform Apache Pulsar Client',
+    description:
+      "A cross platform client for Apache Pulsar that works on all platforms including iOS, Android, macOS, Windows, and Linux. This will allow EdgeOS devices to communicate with each other and with the cloud using Pulsar's powerful messaging capabilities.",
+    date: 'Q3 2025',
   },
   {
     status: 'Planned',
-    title: 'API tokens with granular scopes',
+    title: 'Companion App for iOS, Android, macOS, and Windows',
     description:
-      'Create multiple tokens with read/write/scope-level permissions for teams and external services.',
+      'Deploying an EdgeOS device in the wild does not always have a screen. We are building a companion app that will allow you to manage your EdgeOS devices from your phone or computer. It will leverage the ability for your app to remotely control and configure EdgeOS devices for key features like remote debugging, device management, and especially setting Wi-Fi settings',
     date: 'Q3 2025',
-    team: {
-      name: 'Yassine Zaanouni',
-      image: '/images/blog/authors/yassine-zaanouni.webp',
-    },
   },
   {
     status: 'Planned',
-    title: 'Image editor field type',
+    title: 'Disruption Tolerant Networking and Bundle Protocol V7',
     description:
-      'Add support for cropping, aspect ratios, alt-text, and focal point control in media uploads.',
+      'Disruption Tolerant Networking (DTN) is a networking architecture that allows for communication in environments where traditional networking protocols fail, such as in space or remote areas perfect for Satellite and interstellar deployments. Bundle Protocol V7 is the latest version of the protocol used in DTN. We are working on implementing DTN and Bundle Protocol V7 in EdgeOS to enable communication in challenging environments.',
+    date: 'Q4 2025',
+  },
+  {
+    status: 'Planned',
+    title: 'Companion App for iOS, Android, macOS, and Windows',
+    description:
+      'Deploying an EdgeOS device in the wild does not always have a screen. We are building a companion app that will allow you to manage your EdgeOS devices from your phone or computer. It will leverage the ability for your app to remotely control and configure EdgeOS devices for key features like remote debugging, device management, and especially setting Wi-Fi settings',
     date: 'Q3 2025',
-    team: {
-      name: 'Fedir Davydov',
-      image: '/images/blog/authors/fedir-davydov.webp',
-    },
+  },
+  {
+    status: 'Planned',
+    title: 'Zephyr RTOS support',
+    description:
+      'Support for Zephyr RTOS, a popular real-time operating system for IoT devices, allowing EdgeOS to run on a wider range of hardware including microcontrollers and low-power devices such as the Raspberry Pi Pico, ESP32, and more.',
+    date: 'Q3 2025',
   },
   {
     status: 'Shipped',
-    title: 'Code-first schema sync',
+    title: 'Edge CLI for macOS, Windows, and Linux',
     description:
-      'Use TypeScript or JSON schema files to define content structure, sync to the UI automatically.',
+      "A command line interface for managing EdgeOS devices, including deploying apps, managing devices, and debugging remotely a Swift application",
     date: 'April 2025',
-    team: {
-      name: 'Rob Austin',
-      image: '/images/blog/authors/robert-austin.webp',
-    },
   },
   {
     status: 'Shipped',
-    title: 'GitHub integration (beta)',
+    title: 'EdgeOS 0.0.1 for Raspberry Pi 5',
     description:
-      'Push/pull content and schema changes via GitHub. Ideal for content versioning and CI workflows.',
+      'EdgeOS 0.0.1 is now available for Raspberry Pi 5, allowing developers to run EdgeOS on the latest Raspberry Pi hardware.',
     date: 'March 2025',
-    team: {
-      name: 'Core Team',
-      image: '/layout/logo-icon.svg',
-    },
   },
   {
     status: 'Shipped',
-    title: 'Full-text search API',
+    title: 'EdgeOS 0.0.1 for Raspberry Pi Zero 2 W',
     description:
-      'A robust, built-in full-text search endpoint for your content — supports filters, relevance scoring, and language-aware stemming.',
+      'EdgeOS 0.0.1 is now available for Raspberry Pi Zero 2 W, allowing developers to run EdgeOS on the smallest Raspberry Pi hardware.',
     date: 'February 2025',
-    team: {
-      name: 'Rob Austin',
-      image: '/images/blog/authors/robert-austin.webp',
-    },
   },
   {
     status: 'Shipped',
-    title: 'Custom field components',
+    title: 'EdgeOS for NVIDIA Jetson devices',
     description:
-      'Support for embedding custom React/Vue/Svelte components as field editors — perfect for things like color pickers, map selectors, or signature pads.',
+      'NVIDIA Jetson devices are now supported by EdgeOS, allowing developers to run EdgeOS on powerful AI hardware.',
     date: 'January 2025',
-    team: {
-      name: 'Core Team',
-      image: '/layout/logo-icon.svg',
-    },
   },
 ];
 
@@ -280,20 +271,6 @@ function Item({ item, className }: { item: RoadmapItem; className?: string }) {
       </div>
 
       <div className="mt-6 flex items-center justify-between md:mt-8 lg:mt-10">
-        {item.team && (
-          <div className="flex items-center gap-2">
-            <Image
-              src={item.team.image}
-              alt={item.team.name}
-              width={24}
-              height={24}
-              className=""
-            />
-            <span className="text-muted-foreground text-sm font-medium">
-              {item.team.name}
-            </span>
-          </div>
-        )}
         <Link href={EXTERNAL_LINKS.GITHUB}>
           <FaGithub className="size-5" />
         </Link>
