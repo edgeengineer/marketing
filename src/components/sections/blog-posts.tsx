@@ -39,11 +39,11 @@ export default function BlogPosts({ blogPosts }: { blogPosts: BlogPost[] }) {
     activeCategory === 'All Posts'
       ? blogPosts
       : blogPosts.filter((post) => {
-          const category = post.tags?.find((tag) =>
-            categories.includes(tag as Category),
-          );
-          return category === activeCategory;
-        });
+        const category = post.tags?.find((tag) =>
+          categories.includes(tag as Category),
+        );
+        return category === activeCategory;
+      });
 
   // Get currently visible posts
   const visiblePostsList = filteredPosts.slice(0, visiblePosts);
@@ -119,7 +119,7 @@ export default function BlogPosts({ blogPosts }: { blogPosts: BlogPost[] }) {
             const isLastRow =
               index >=
               visiblePostsList.length -
-                (visiblePostsList.length % 2 === 0 ? 2 : 1);
+              (visiblePostsList.length % 2 === 0 ? 2 : 1);
             // Is it the last item?
             const isLastItem = index === visiblePostsList.length - 1;
             // Is it odd and in an odd position? (left column)
@@ -152,7 +152,6 @@ export default function BlogPosts({ blogPosts }: { blogPosts: BlogPost[] }) {
             {hasMorePosts && (
               <Button
                 variant="outline"
-                className="rounded-full"
                 size="lg"
                 onClick={loadMorePosts}
                 disabled={isLoading}
@@ -241,7 +240,7 @@ function BlogPostItem({
                       alt={author.name}
                       width={32}
                       height={32}
-                      className="border-background rounded-full border-2"
+                      className="border-background border-2"
                     />
                   ),
               )}

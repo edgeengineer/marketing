@@ -31,7 +31,7 @@ type ComponentProps = {
 // Custom components for MDX
 const components = {
   pre: ({ children, ...props }: ComponentProps) => (
-    <div className="bg-accent my-8 overflow-auto rounded-lg p-6 font-mono text-sm">
+    <div className="bg-accent my-8 overflow-auto p-6 font-mono text-sm">
       <pre className="text-sm" {...props}>
         {children}
       </pre>
@@ -95,7 +95,7 @@ const components = {
       alt={alt || ''}
       width={1000}
       height={500}
-      className="my-8 w-full rounded-lg object-cover"
+      className="my-8 w-full object-cover"
       {...props}
     />
   ),
@@ -247,7 +247,7 @@ export default async function BlogPost({
                               alt={author.name}
                               width={32}
                               height={32}
-                              className="h-8 w-8 rounded-full border-2 border-white"
+                              className="h-8 w-8 border-2 border-white"
                             />
                           ),
                       )}

@@ -7,6 +7,7 @@ export const EXTERNAL_LINKS = {
   GITHUB: 'https://github.com/orgs/edgeengineer/repositories',
   TWITTER: 'https://x.com/edgecated',
   LINKEDIN: '#',
+  DOCUMENTATION: 'https://edge.engineer',
 
   // Contact
   EMAIL: 'mailto:contact@edge.engineer',

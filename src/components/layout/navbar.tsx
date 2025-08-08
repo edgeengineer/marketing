@@ -184,21 +184,21 @@ function Navbar() {
                 <span
                   aria-hidden="true"
                   className={cn(
-                    'absolute block h-0.5 w-full rounded-full bg-current transition-transform duration-500 ease-in-out',
+                    'absolute block h-0.5 w-full bg-current transition-transform duration-500 ease-in-out',
                     isMenuOpen ? 'rotate-45' : '-translate-y-1.5',
                   )}
                 ></span>
                 <span
                   aria-hidden="true"
                   className={cn(
-                    'absolute block h-0.5 w-full rounded-full bg-current transition-transform duration-500 ease-in-out',
+                    'absolute block h-0.5 w-full bg-current transition-transform duration-500 ease-in-out',
                     isMenuOpen ? 'opacity-0' : '',
                   )}
                 ></span>
                 <span
                   aria-hidden="true"
                   className={cn(
-                    'absolute block h-0.5 w-full rounded-full bg-current transition-transform duration-500 ease-in-out',
+                    'absolute block h-0.5 w-full bg-current transition-transform duration-500 ease-in-out',
                     isMenuOpen ? '-rotate-45' : 'translate-y-1.5',
                   )}
                 ></span>
@@ -492,7 +492,7 @@ const ListItem = React.forwardRef<
           <Link
             ref={ref}
             className={cn(
-              'hover:bg-accent group hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md border-none p-3 leading-none no-underline transition-colors select-none',
+              'hover:bg-accent group hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 border-none p-3 leading-none no-underline transition-colors select-none',
               className,
             )}
             {...props}
@@ -500,7 +500,7 @@ const ListItem = React.forwardRef<
             <div className="flex items-center gap-3">
               <div
                 className={cn(
-                  'flex size-8 shrink-0 items-center justify-center rounded-md',
+                  'flex size-8 shrink-0 items-center justify-center',
                   isHighlighted &&
                   'bg-secondary [&>svg]:!text-secondary-foreground',
                 )}

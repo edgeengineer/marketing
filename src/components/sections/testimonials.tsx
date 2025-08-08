@@ -90,7 +90,7 @@ export function Testimonials() {
               alt="Robert Austin"
               width={40}
               height={40}
-              className="rounded-full"
+              className=""
             />
             <cite className="text-sm font-medium not-italic md:text-lg lg:text-xl">
               Robert Austin, Founder & Software Engineer at Zerostatic

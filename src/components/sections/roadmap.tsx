@@ -287,7 +287,7 @@ function Item({ item, className }: { item: RoadmapItem; className?: string }) {
               alt={item.team.name}
               width={24}
               height={24}
-              className="rounded-full"
+              className=""
             />
             <span className="text-muted-foreground text-sm font-medium">
               {item.team.name}

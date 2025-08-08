@@ -80,7 +80,7 @@ export default function ForgotPasswordPage() {
               />
 
               {/* Reset Password Button */}
-              <Button type="submit" className="w-full rounded-sm">
+              <Button type="submit" className="w-full">
                 Send reset link
               </Button>
             </form>

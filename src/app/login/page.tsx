@@ -127,7 +127,7 @@ export default function LoginPage() {
               </div>
 
               {/* Login Button */}
-              <Button type="submit" className="w-full rounded-sm">
+              <Button type="submit" className="w-full">
                 Log in
               </Button>
             </form>
@@ -137,7 +137,7 @@ export default function LoginPage() {
           <div className="flex flex-wrap gap-5">
             <Button
               variant="outline"
-              className="flex-1 rounded-sm"
+              className="flex-1"
               type="button"
             >
               <FaGithub className="size-5" />
@@ -145,7 +145,7 @@ export default function LoginPage() {
             </Button>
             <Button
               variant="outline"
-              className="flex-1 rounded-sm"
+              className="flex-1"
               type="button"
             >
               <FcGoogle className="size-5" />

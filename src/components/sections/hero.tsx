@@ -3,10 +3,11 @@
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaDiscord } from 'react-icons/fa6';
+import { FaArrowRight, FaDiscord } from 'react-icons/fa6';
 
 import { Button } from '@/components/ui/button';
 import { MovingBorder } from '@/components/ui/moving-border';
+import { EXTERNAL_LINKS } from '@/constants/external-links';
 import { cn } from '@/lib/utils';
 
 export function Hero() {
@@ -19,12 +20,12 @@ export function Hero() {
             {/* Beta Banner */}
             <Link
               href="#"
-              className="relative inline-flex items-center overflow-hidden rounded-sm p-[1px]"
+              className="relative inline-flex items-center overflow-hidden p-[1px]"
             >
               <MovingBorder duration={4000}>
                 <div
                   className={cn(
-                    'h-18 w-25 bg-[radial-gradient(#00A656_40%,transparent_60%)] opacity-[0.8]',
+                    'h-18 w-25 bg-[radial-gradient(#27b0c5_40%,transparent_60%)] opacity-[0.8]',
                   )}
                 />
               </MovingBorder>
@@ -38,7 +39,7 @@ export function Hero() {
               </Button>
             </Link>
             <h1 className="font-weight-display text-2xl leading-snug tracking-tighter md:text-3xl lg:text-5xl">
-              Fast, flexible, and{' '}
+              Build Edge Computing {' '}
               <span className="block">developer-first CMS.</span>
             </h1>
             <p className="text-muted-foreground mx-auto max-w-[700px] text-sm leading-relaxed md:text-lg lg:text-xl">
@@ -51,10 +52,13 @@ export function Hero() {
           {/* CTA Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
             <Button asChild>
-              <Link href="#">Start Free Trial</Link>
+              <Link href={EXTERNAL_LINKS.DOCUMENTATION}>
+                <FaArrowRight className="size-5" />
+                Documentation
+                Get Started</Link>
             </Button>
             <Button asChild variant="outline">
-              <Link href="#">
+              <Link href={EXTERNAL_LINKS.DISCORD}>
                 <FaDiscord className="size-5" />
                 Community
               </Link>

@@ -34,7 +34,7 @@ export default function NotFound() {
       <div className="border-x">
         <div className="bordered-div-padding flex flex-col items-center space-y-6 md:space-y-8 lg:space-y-12 lg:!py-25">
           <Badge variant="outline" className="gap-2 py-1.25 text-sm">
-            <div className="bg-secondary size-2 rounded-full"></div>
+            <div className="bg-secondary size-2"></div>
             404 error
           </Badge>
 
@@ -75,7 +75,7 @@ export default function NotFound() {
                       </p>
                     </div>
                   </div>
-                  <div className="bg-card flex size-8 shrink-0 items-center justify-center rounded-sm border">
+                  <div className="bg-card flex size-8 shrink-0 items-center justify-center border">
                     <ChevronRight className="size-5 shrink-0 tracking-tight transition-transform duration-200" />
                   </div>
                 </div>

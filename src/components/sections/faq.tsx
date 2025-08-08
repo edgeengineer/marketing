@@ -170,7 +170,7 @@ export function FAQSection() {
               <AccordionItem key={index} value={`item-${index}`}>
                 <AccordionTrigger className="bordered-div-padding font-weight-display flex w-full items-center justify-between !pb-4 text-base hover:no-underline md:!pb-6 md:text-xl [&>svg]:hidden [&[data-state=open]_svg]:rotate-180">
                   <span>{faq.question}</span>
-                  <div className="bg-card flex size-8 items-center justify-center rounded-sm border">
+                  <div className="bg-card flex size-8 items-center justify-center border">
                     <ChevronDown className="size-5 shrink-0 tracking-tight transition-transform duration-200" />
                   </div>
                 </AccordionTrigger>

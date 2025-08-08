@@ -203,7 +203,7 @@ const Footer = () => {
           <div className="bordered-div-padding flex items-center border-t text-[#00A656] md:border-t-0">
             <span
               className={cn(
-                'me-3 h-2 w-2 animate-pulse rounded-full bg-[#00A656]',
+                'me-3 h-2 w-2 animate-pulse bg-[#00A656]',
               )}
             ></span>
             <span className="font-medium">All systems operational</span>

@@ -99,7 +99,7 @@ export function AboutMissionTeam() {
                             alt={member.name}
                             width={32}
                             height={32}
-                            className="rounded-full"
+                            className=""
                           />
                           <p className="text-sm font-medium md:text-base">
                             {member.name}
@@ -130,7 +130,7 @@ export function AboutMissionTeam() {
                         alt={member.name}
                         width={24}
                         height={24}
-                        className="rounded-full"
+                        className=""
                       />
                       <p className="text-sm font-medium">{member.name}</p>
                     </div>

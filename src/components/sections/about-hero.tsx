@@ -3,6 +3,7 @@ import { FaDiscord, FaGithub } from 'react-icons/fa6';
 
 import { PlusSigns } from '@/components/icons/plus-signs';
 import { Button } from '@/components/ui/button';
+import { EXTERNAL_LINKS } from '@/constants/external-links';
 
 export function AboutHero() {
   return (
@@ -25,13 +26,13 @@ export function AboutHero() {
         {/* CTA Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
           <Button asChild>
-            <Link href="#">
+            <Link href={EXTERNAL_LINKS.DISCORD}>
               <FaDiscord className="size-5" />
               Join our Discord
             </Link>
           </Button>
           <Button asChild variant="outline">
-            <Link href="#">
+            <Link href={EXTERNAL_LINKS.GITHUB}>
               <FaGithub className="size-5" />
               Star on GitHub
             </Link>
