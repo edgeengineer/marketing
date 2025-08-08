@@ -17,7 +17,7 @@ import { useMediaQuery } from '@/hooks/use-media-query';
 const testimonials = [
   {
     company: 'Snap',
-    quote: 'Scalar makes content modeling effortless for developers.',
+    quote: 'Edge makes content modeling effortless for developers.',
     author: {
       name: 'Robert Austin',
       role: 'Founder & Software Engineer',
@@ -41,7 +41,7 @@ const testimonials = [
   },
   {
     company: 'Craft',
-    quote: 'Scalar transformed how we manage content platform-wide.',
+    quote: 'Edge transformed how we manage content platform-wide.',
     author: {
       name: 'Emily Davis',
       role: 'Product Manager',
@@ -65,7 +65,7 @@ const testimonials = [
   },
   {
     company: 'BankTech',
-    quote: "Scalar's flexibility lets us build what users need.",
+    quote: "Edge's flexibility lets us build what users need.",
     author: {
       name: 'David Kim',
       role: 'Technical Director',
@@ -89,7 +89,7 @@ const testimonials = [
   },
   {
     company: 'TechMeet',
-    quote: 'Scalar bridges the gap between content and code.',
+    quote: 'Edge bridges the gap between content and code.',
     author: {
       name: 'Anna Martinez',
       role: 'Software Architect',

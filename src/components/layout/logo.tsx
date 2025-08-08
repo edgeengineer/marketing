@@ -23,7 +23,7 @@ export default function Logo({
       {!wordmark && (
         <Image
           src="/layout/logo-icon.svg"
-          alt="Scalar Logo"
+          alt="Edge Logo"
           width={22}
           height={24}
           className={cn('object-contain', iconClassName)}
@@ -31,7 +31,7 @@ export default function Logo({
       {wordmark && (
         <Image
           src="/layout/logo-wordmark.svg"
-          alt="Scalar"
+          alt="Edge"
           width={60.353}
           height={20.009}
           className={cn('object-contain', wordmarkClassName)}

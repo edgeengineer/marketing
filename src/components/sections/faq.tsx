@@ -41,10 +41,10 @@ type FAQ = {
 const faqs: Record<Category, FAQ[]> = {
   Developers: [
     {
-      question: 'How do I install Scalar CMS in my project?',
+      question: 'How do I install Edge in my project?',
       answer: (
         <>
-          You can install Scalar with a single CLI command. It supports popular
+          You can install Edge with a single CLI command. It supports popular
           frameworks like Next.js, Nuxt, SvelteKit, and more. Use our official
           SDK or connect directly to the GraphQL API. See the{' '}
           <Link href="#" className="text-primary underline">
@@ -55,29 +55,29 @@ const faqs: Record<Category, FAQ[]> = {
       ),
     },
     {
-      question: 'Is Scalar open source?',
+      question: 'Is Edge open source?',
       answer:
-        'Yes, Scalar is fully open source under the MIT license. You can view, modify, and contribute to the codebase on GitHub. Our cloud offering provides additional enterprise features, but the core CMS is free to use.',
+        'Yes, Edge is fully open source under the MIT license. You can view, modify, and contribute to the codebase on GitHub. Our cloud offering provides additional enterprise features, but the core CMS is free to use.',
     },
     {
-      question: 'What API types does Scalar support?',
+      question: 'What API types does Edge support?',
       answer:
-        'Scalar provides both GraphQL and REST APIs. The GraphQL API offers a flexible query language with strong typing, while the REST API provides simple HTTP endpoints for common operations. Both APIs are fully documented with SDKs available in multiple languages.',
+        'Edge provides both GraphQL and REST APIs. The GraphQL API offers a flexible query language with strong typing, while the REST API provides simple HTTP endpoints for common operations. Both APIs are fully documented with SDKs available in multiple languages.',
     },
     {
       question: 'Can I define content models with code?',
       answer:
-        'Yes, Scalar supports code-first content modeling. You can define your schemas using TypeScript, allowing for version control and type safety. This approach works well with CI/CD pipelines and makes it easy to maintain consistent content structures across environments.',
+        'Yes, Edge supports code-first content modeling. You can define your schemas using TypeScript, allowing for version control and type safety. This approach works well with CI/CD pipelines and makes it easy to maintain consistent content structures across environments.',
     },
   ],
   'Content Editing & Workflow': [
     {
       question: 'Can I create custom content workflows?',
       answer:
-        'Yes, Scalar allows you to define custom workflows for content creation, review, and publishing. You can set up multiple stages with granular permissions for different team members.',
+        'Yes, Edge allows you to define custom workflows for content creation, review, and publishing. You can set up multiple stages with granular permissions for different team members.',
     },
     {
-      question: 'Does Scalar support real-time collaboration?',
+      question: 'Does Edge support real-time collaboration?',
       answer:
         'Yes, our Cloud plan includes real-time collaboration features, allowing multiple team members to work on content simultaneously with live updates and conflict resolution.',
     },
@@ -91,17 +91,17 @@ const faqs: Record<Category, FAQ[]> = {
     {
       question: 'Can I migrate from self-hosted to cloud later?',
       answer:
-        'Yes, we provide migration tools to easily transfer your content and settings from a self-hosted Scalar instance to our cloud platform.',
+        'Yes, we provide migration tools to easily transfer your content and settings from a self-hosted Edge instance to our cloud platform.',
     },
   ],
   'Community & Support': [
     {
-      question: 'Where can I get help with Scalar?',
+      question: 'Where can I get help with Edge?',
       answer:
         'For the open-source version, we have an active community on Discord and GitHub. Cloud customers receive email support and access to our knowledge base. Enterprise plans include dedicated support channels and SLAs.',
     },
     {
-      question: 'How can I contribute to Scalar?',
+      question: 'How can I contribute to Edge?',
       answer:
         'We welcome contributions! You can contribute code, report bugs, suggest features, or help improve our documentation. Check our GitHub repository for contribution guidelines.',
     },

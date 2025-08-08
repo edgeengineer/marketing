@@ -58,7 +58,7 @@ export default function LoginPage() {
           <div className="space-y-6">
             <Logo />
             <h1 className="font-weight-display tracking-tighter md:text-xl">
-              Log In to Scalar
+              Log In to Edge
             </h1>
           </div>
           <Form {...form}>

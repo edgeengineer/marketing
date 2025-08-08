@@ -278,7 +278,7 @@ export default async function BlogPost({
                 Wrap-up
               </h2>
               <p className="text-foreground mb-8 text-base leading-relaxed">
-                A CMS shouldn&apos;t slow you down. Scalar aims to expand into
+                A CMS shouldn&apos;t slow you down. Edge aims to expand into
                 your workflow — whether you&apos;re coding content models,
                 collaborating on product copy, or launching updates at 2am.
               </p>
@@ -289,7 +289,7 @@ export default async function BlogPost({
                   href={EXTERNAL_LINKS.EMAIL}
                   className="text-secondary inline-flex items-center font-medium hover:underline"
                 >
-                  try Scalar
+                  try Edge
                   <ExternalLink className="ml-1 h-3.5 w-3.5" />
                 </Link>{' '}
                 or{' '}
@@ -308,7 +308,7 @@ export default async function BlogPost({
             <Alert className="">
               <Info className="!text-secondary h-4 w-4" />
               <AlertDescription className="text-foreground text-sm">
-                Scalar is fully open source. You can self-host or use our cloud
+                Edge is fully open source. You can self-host or use our cloud
                 platform — your workflow, your terms.
               </AlertDescription>
             </Alert>

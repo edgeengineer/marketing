@@ -18,7 +18,7 @@ export function AboutHero() {
             <span className="block">Backed by community</span>
           </h1>
           <p className="text-muted-foreground mx-auto max-w-[700px] text-sm leading-relaxed md:text-lg lg:text-xl">
-            Scalar is the open content platform that puts speed, control, and
+            Edge is the open content platform that puts speed, control, and
             freedom in your hands — without giving up collaboration or scale.
           </p>
         </div>

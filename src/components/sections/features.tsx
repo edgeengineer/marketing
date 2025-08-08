@@ -15,7 +15,7 @@ const features = [
     ),
     description: 'Design content structures your way.',
     subDescription:
-      'Scalar CMS gives you full control over content with a streamlined, API-first experience — perfect for teams who want speed without sacrificing flexibility.',
+      'Edge gives you full control over content with a streamlined, API-first experience — perfect for teams who want speed without sacrificing flexibility.',
     className: '!pb-0',
     images: [
       {

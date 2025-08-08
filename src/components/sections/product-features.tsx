@@ -9,7 +9,7 @@ const features = [
     title: 'Track Changes',
     description: 'GitHub Integration',
     subDescription:
-      "Scalar's GitHub Sync lets you track model changes like any other code. Collaborate on schema changes just like features or fixes.",
+      "Edge's GitHub Sync lets you track model changes like any other code. Collaborate on schema changes just like features or fixes.",
     className: '',
     images: [
       {
@@ -26,7 +26,7 @@ const features = [
     title: 'Local Development',
     description: 'Develop locally. Push globally',
     subDescription:
-      "With npx scalar dev, your local environment becomes the control hub. Work offline, iterate rapidly, and push when you're ready.",
+      "With npx Edge dev, your local environment becomes the control hub. Work offline, iterate rapidly, and push when you're ready.",
     className: '',
     images: [
       {
@@ -43,7 +43,7 @@ const features = [
     title: 'Model Definitions',
     description: 'Define once, use everywhere content',
     subDescription:
-      'Write once in code. Scalar reflects it in the admin panel immediately.',
+      'Write once in code. Edge reflects it in the admin panel immediately.',
     images: [
       {
         src: '/images/product/feature-3-1.webp',
@@ -66,7 +66,7 @@ const features = [
     title: 'Ready to Scale',
     description: 'Code-first, but never code-only',
     subDescription:
-      'Your teammates can still use the visual UI. Scalar lets devs code, and non-devs manage content with equal ease.',
+      'Your teammates can still use the visual UI. Edge lets devs code, and non-devs manage content with equal ease.',
     images: [
       {
         src: '/images/product/feature-4-1.webp',

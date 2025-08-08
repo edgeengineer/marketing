@@ -29,7 +29,7 @@ const FEATURES = [
         icon: <Server className="size-5" />,
       },
       {
-        name: 'Full access to the Scalar CMS core',
+        name: 'Full access to the Edge core',
         icon: <FileCode className="size-5" />,
       },
       {
@@ -200,10 +200,10 @@ const Footer = () => {
               <FaLinkedin className="size-5" />
             </Link>
           </div>
-          <div className="bordered-div-padding flex items-center border-t text-[#00A656] md:border-t-0">
+          <div className="bordered-div-padding flex items-center border-t text-teal md:border-t-0">
             <span
               className={cn(
-                'me-3 h-2 w-2 animate-pulse bg-[#00A656]',
+                'me-3 h-2 w-2 animate-pulse bg-teal',
               )}
             ></span>
             <span className="font-medium">All systems operational</span>

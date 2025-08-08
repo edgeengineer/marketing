@@ -48,12 +48,12 @@ export function AboutMissionTeam() {
               <span className="text-foreground font-medium">
                 The modern content stack is bloated, slow, and often closed.
               </span>{' '}
-              Scalar started as a simple idea: what if you could have a fast,
+              Edge started as a simple idea: what if you could have a fast,
               developer-first content layer that worked out of the box — but
               didn’t lock you in?
             </p>
             <p className="text-muted-foreground text-sm leading-relaxed md:text-base">
-              We built Scalar to empower teams to model, edit, and{' '}
+              We built Edge to empower teams to model, edit, and{' '}
               <span className="text-foreground font-medium">
                 ship content collaboratively
               </span>{' '}
@@ -81,7 +81,7 @@ export function AboutMissionTeam() {
               Team
             </h2>
             <p className="text-muted-foreground text-sm leading-relaxed md:text-base">
-              We’re a tiny team building Scalar with big care — balancing code,
+              We’re a tiny team building Edge with big care — balancing code,
               design, and community every day.
             </p>
 

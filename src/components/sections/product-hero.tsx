@@ -14,7 +14,7 @@ export function ProductHero() {
             Code-first models
           </h1>
           <p className="text-muted-foreground mx-auto max-w-[700px] text-sm leading-relaxed md:text-lg lg:text-xl">
-            Define models in code. Sync them seamlessly to Scalar&apos;s UI.
+            Define models in code. Sync them seamlessly to Edge&apos;s UI.
           </p>
         </div>
 

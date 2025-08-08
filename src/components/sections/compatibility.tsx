@@ -23,44 +23,44 @@ const frameworks = [
   {
     name: 'Next.js / React',
     lang: 'tsx',
-    code: `// app/lib/scalar.ts
+    code: `// app/lib/Edge.ts
     
-import { createClient } from '@scalar/api-client';
+import { createClient } from '@Edge/api-client';
 
-export const scalar = createClient({
-  projectId: process.env.NEXT_PUBLIC_SCALAR_PROJECT_ID,
-  apiKey: process.env.SCALAR_API_KEY,
+export const Edge = createClient({
+  projectId: process.env.NEXT_PUBLIC_Edge_PROJECT_ID,
+  apiKey: process.env.Edge_API_KEY,
 });`,
   },
   {
     name: 'Nuxt / Vue',
     lang: 'vue',
-    code: `<!-- plugins/scalar.ts -->
+    code: `<!-- plugins/Edge.ts -->
 
 <script lang="ts">
-import { createClient } from '@scalar/api-client';
+import { createClient } from '@Edge/api-client';
 
 export default defineNuxtPlugin(() => {
-  const scalar = createClient({
-    projectId: process.env.NUXT_SCALAR_PROJECT_ID,
-    apiKey: process.env.NUXT_SCALAR_API_KEY,
+  const Edge = createClient({
+    projectId: process.env.NUXT_Edge_PROJECT_ID,
+    apiKey: process.env.NUXT_Edge_API_KEY,
   });
 
-  return { provide: { scalar } };
+  return { provide: { Edge } };
 });
 </script>`,
   },
   {
     name: 'SvelteKit',
     lang: 'svelte',
-    code: `<!-- lib/scalar.ts -->
+    code: `<!-- lib/Edge.ts -->
 
 <script lang="ts">
-import { createClient } from '@scalar/api-client';
+import { createClient } from '@Edge/api-client';
 
-export const scalar = createClient({
-  projectId: import.meta.env.VITE_SCALAR_PROJECT_ID,
-  apiKey: import.meta.env.SCALAR_API_KEY,
+export const Edge = createClient({
+  projectId: import.meta.env.VITE_Edge_PROJECT_ID,
+  apiKey: import.meta.env.Edge_API_KEY,
 });
 </script>`,
   },
@@ -68,38 +68,38 @@ export const scalar = createClient({
     name: 'Astro',
     lang: 'astro',
     code: `---
-// lib/scalar.ts
+// lib/Edge.ts
 
-import { createClient } from '@scalar/api-client';
+import { createClient } from '@Edge/api-client';
 
-export const scalar = createClient({
-  projectId: import.meta.env.SCALAR_PROJECT_ID,
-  apiKey: import.meta.env.SCALAR_API_KEY,
+export const Edge = createClient({
+  projectId: import.meta.env.Edge_PROJECT_ID,
+  apiKey: import.meta.env.Edge_API_KEY,
 });
 ---`,
   },
   {
     name: 'Shopify',
     lang: 'tsx',
-    code: `// web/lib/scalar.ts
+    code: `// web/lib/Edge.ts
 
-import { createClient } from '@scalar/api-client';
+import { createClient } from '@Edge/api-client';
 
-export const scalar = createClient({
-  projectId: process.env.SCALAR_PROJECT_ID,
-  apiKey: process.env.SCALAR_API_KEY,
+export const Edge = createClient({
+  projectId: process.env.Edge_PROJECT_ID,
+  apiKey: process.env.Edge_API_KEY,
 });`,
   },
   {
     name: 'Stripe',
     lang: 'tsx',
-    code: `// lib/scalar.ts
+    code: `// lib/Edge.ts
 
-import { createClient } from '@scalar/api-client';
+import { createClient } from '@Edge/api-client';
 
-export const scalar = createClient({
-  projectId: process.env.SCALAR_PROJECT_ID,
-  apiKey: process.env.SCALAR_API_KEY,
+export const Edge = createClient({
+  projectId: process.env.Edge_PROJECT_ID,
+  apiKey: process.env.Edge_API_KEY,
 });`,
   },
 ];

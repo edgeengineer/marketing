@@ -1,7 +1,7 @@
 import { RoadmapSection } from '@/components/sections/roadmap';
 
 export const metadata = {
-  title: 'Roadmap - Scalar',
+  title: 'Roadmap - Edge',
   description: 'Track our progress and upcoming features.',
 };
 

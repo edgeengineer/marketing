@@ -43,7 +43,7 @@ export function Hero() {
               <span className="block">developer-first CMS.</span>
             </h1>
             <p className="text-muted-foreground mx-auto max-w-[700px] text-sm leading-relaxed md:text-lg lg:text-xl">
-              Scalar CMS gives you full control over content with a streamlined,
+              Edge gives you full control over content with a streamlined,
               API-first experience—perfect for teams who want speed without
               sacrificing flexibility.
             </p>

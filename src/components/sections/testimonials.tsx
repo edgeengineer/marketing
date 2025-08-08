@@ -79,7 +79,7 @@ export function Testimonials() {
       {/* Testimonial */}
       <blockquote className="bordered-div-padding flex flex-col justify-between gap-8 border border-t-0 md:flex-row">
         <p className="lg:text-4xxl font-weight-display flex-7 text-2xl leading-snug tracking-tighter md:text-3xl">
-          Scalar CMS changed how we ship content. It&apos;s fast, intuitive, and
+          Edge changed how we ship content. It&apos;s fast, intuitive, and
           plays perfectly with our stack.
         </p>
 

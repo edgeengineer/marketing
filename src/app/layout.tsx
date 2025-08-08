@@ -14,8 +14,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Scalar - Modern Next.js Template',
-    template: '%s | Scalar',
+    default: 'Edge - Modern Next.js Template',
+    template: '%s | Edge',
   },
   description:
     'A modern, fully featured Next.js template built with Shadcn/UI, TailwindCSS and TypeScript, perfect for your next web application.',
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     'Shadcn/UI',
     'Web Development',
   ],
-  authors: [{ name: 'Scalar - Shadcnblocks.com' }],
-  creator: 'Scalar - Shadcnblocks.com',
-  publisher: 'Scalar',
+  authors: [{ name: 'Edge - Shadcnblocks.com' }],
+  creator: 'Edge - Shadcnblocks.com',
+  publisher: 'Edge',
   robots: {
     index: true,
     follow: true,
@@ -48,22 +48,22 @@ export const metadata: Metadata = {
     shortcut: [{ url: '/favicon/favicon.ico' }],
   },
   openGraph: {
-    title: 'Scalar - Modern Next.js Template',
+    title: 'Edge - Modern Next.js Template',
     description:
       'A modern, fully featured Next.js template built with Shadcn/UI, TailwindCSS and TypeScript, perfect for your next web application.',
-    siteName: 'Scalar',
+    siteName: 'Edge',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Scalar - Modern Next.js Template',
+        alt: 'Edge - Modern Next.js Template',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Scalar - Modern Next.js Template',
+    title: 'Edge - Modern Next.js Template',
     description:
       'A modern, fully featured Next.js template built with Shadcn/UI, TailwindCSS and TypeScript, perfect for your next web application.',
     images: ['/og-image.jpg'],

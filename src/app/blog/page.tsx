@@ -4,8 +4,8 @@ import BlogPosts from '@/components/sections/blog-posts';
 import { getAllBlogs } from '@/lib/blog';
 
 export const metadata: Metadata = {
-  title: 'Blog - Scalar',
-  description: 'Latest news, updates, and insights from the Scalar team',
+  title: 'Blog - Edge',
+  description: 'Latest news, updates, and insights from the Edge team',
 };
 
 export default async function BlogPage() {

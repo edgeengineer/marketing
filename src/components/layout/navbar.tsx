@@ -82,7 +82,7 @@ const navigationItems: NavItem[] = [
           {
             title: 'Local Development',
             href: '/product',
-            description: 'Run Scalar locally with npx scalar dev',
+            description: 'Run Edge locally with npx Edge dev',
             icon: Terminal,
           },
           {

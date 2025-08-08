@@ -45,7 +45,7 @@ export function ContactSection() {
           <div className="bordered-div-padding relative space-y-6 md:space-y-8 lg:space-y-10">
             <PlusSigns className="absolute inset-0 -mt-0.25 hidden !h-[calc(100%+2px)] -translate-x-full border-y md:block" />
             <h1 className="font-weight-display text-2xl leading-snug tracking-tighter md:text-3xl lg:text-5xl">
-              Talk to the Scalar team
+              Talk to the Edge team
             </h1>
             <p className="text-muted-foreground mx-auto max-w-[700px] text-sm leading-relaxed md:text-lg lg:text-xl">
               Whether you&apos;re a solo dev, content team, or curious

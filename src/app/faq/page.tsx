@@ -3,8 +3,8 @@ import { Metadata } from 'next';
 import { FAQSection } from '@/components/sections/faq';
 
 export const metadata: Metadata = {
-  title: 'FAQs - Scalar',
-  description: 'Frequently asked questions about Scalar CMS',
+  title: 'FAQs - Edge',
+  description: 'Frequently asked questions about Edge',
 };
 
 export default function FAQPage() {

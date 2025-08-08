@@ -49,7 +49,7 @@ const roadmapItems: RoadmapItem[] = [
   {
     status: 'In Progress',
     title: 'SvelteKit plugin',
-    description: 'First-class Scalar support for SvelteKit via a plugin.',
+    description: 'First-class Edge support for SvelteKit via a plugin.',
     date: 'Q2 2025',
     team: {
       name: 'Core Team',
