@@ -181,6 +181,7 @@ const navigationItems: NavItem[] = [
       },
     ],
   },
+  { title: 'Professional Services', href: '/professional-services' },
   { title: 'About', href: '/about' },
   { title: 'Roadmap', href: '/roadmap' },
   { title: 'FAQs', href: '/faq' },

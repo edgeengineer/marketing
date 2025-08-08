@@ -14,17 +14,17 @@ import { EXTERNAL_LINKS } from '@/constants/external-links';
 const teamMembers = [
   {
     name: 'Max Alexander',
-    role: 'Founder',
+    role: 'CEO & Founder',
     company: 'Zerostatic',
     image: '/images/blog/authors/max-alexander.jpeg',
     github: '#',
     linkedin: '#',
-    twitter: 'https://www.x.com/signalgaining',
-    bio: 'Co-Founder of Nora and Ditto. Obsessed with building software for the physical world.',
+    twitter: 'signalganing',
+    bio: 'Co-Founder of Nora and Ditto. ',
   },
   {
     name: 'Mihai Chiorean',
-    role: 'Co-founder',
+    role: 'CTO & Founder',
     company: 'Zerostatic',
     image: '/images/blog/authors/mihai-chiorean.jpeg',
     github: '#',
@@ -34,7 +34,7 @@ const teamMembers = [
   },
   {
     name: 'Hone Komarkowski',
-    role: 'Co-founder',
+    role: 'COO & Founder',
     company: 'Zerostatic',
     image: '/images/blog/authors/hone-komarkowski.jpeg',
     github: '#',
