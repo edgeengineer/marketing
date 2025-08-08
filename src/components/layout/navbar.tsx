@@ -18,7 +18,7 @@ import * as React from 'react';
 import { FaGithub } from 'react-icons/fa6';
 
 import Logo from '@/components/layout/logo';
-import { ThemeToggle } from '@/components/theme-toggle';
+// import { ThemeToggle } from '@/components/theme-toggle';
 import { Button } from '@/components/ui/button';
 import {
   NavigationMenu,
@@ -171,7 +171,7 @@ function Navbar() {
 
           {/* Hamburger Menu Button (Mobile Only) */}
           <div className="me-6 ml-auto flex flex-1 items-center justify-end lg:me-0 lg:hidden">
-            <ThemeToggle className="" />
+            {/* <ThemeToggle className="" /> */}
 
             <Button
               variant="outline"
@@ -305,7 +305,7 @@ const NavBarAction = ({
 
       <div className="flex flex-1 items-center gap-2">
         <div className="flex flex-1 items-center justify-center">
-          <ThemeToggle className="hidden lg:block" />
+          {/* <ThemeToggle className="hidden lg:block" /> */}
           <Link href="/login" onClick={() => setIsMenuOpen?.(false)}>
             <Button size="sm" variant="ghost" className="lg:text-base">
               Log In
