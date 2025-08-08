@@ -29,6 +29,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
+import { EXTERNAL_LINKS } from '@/constants/external-links';
 import { useMediaQuery } from '@/hooks/use-media-query';
 import { cn } from '@/lib/utils';
 
@@ -292,14 +293,13 @@ const NavBarAction = ({
 }) => {
   return (
     <div className="bordered-div-padding flex items-center justify-between border lg:border-none lg:!p-0">
-      <Link href="#" className="flex items-center">
+      <Link href={EXTERNAL_LINKS.GITHUB} className="flex items-center">
         <Button
           variant="ghost"
           className="gap-2 font-medium lg:text-base"
           size="sm"
         >
           <FaGithub className="size-5" />
-          <span className="">14.3k</span>
         </Button>
       </Link>
 
@@ -359,9 +359,8 @@ function MobileNavItem({
           {item.title}
         </Button>
         <ChevronDown
-          className={`h-5 w-5 transition-transform duration-200 ${
-            isOpen ? 'rotate-180' : ''
-          }`}
+          className={`h-5 w-5 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''
+            }`}
         />
       </div>
 
@@ -400,7 +399,7 @@ function MobileNavItem({
                       delay:
                         0.15 +
                         (sectionIndex * section.items.length + itemIndex) *
-                          0.03,
+                        0.03,
                       duration: 0.25,
                       ease: 'easeOut',
                     }}
@@ -503,7 +502,7 @@ const ListItem = React.forwardRef<
                 className={cn(
                   'flex size-8 shrink-0 items-center justify-center rounded-md',
                   isHighlighted &&
-                    'bg-secondary [&>svg]:!text-secondary-foreground',
+                  'bg-secondary [&>svg]:!text-secondary-foreground',
                 )}
               >
                 {Icon && <Icon className="text-foreground size-4" />}

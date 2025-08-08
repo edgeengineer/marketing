@@ -3,14 +3,14 @@
  */
 export const EXTERNAL_LINKS = {
   // Social media
-  DISCORD: 'https://www.shadcnblocks.com/',
-  GITHUB: 'https://www.shadcnblocks.com/',
-  TWITTER: 'https://www.shadcnblocks.com/',
-  LINKEDIN: 'https://www.shadcnblocks.com/',
+  DISCORD: 'https://discord.gg/auDvQ5CwP5',
+  GITHUB: 'https://github.com/orgs/edgeengineer/repositories',
+  TWITTER: 'https://x.com/edgecated',
+  LINKEDIN: '#',
 
   // Contact
-  EMAIL: 'mailto:team@scalar.com',
+  EMAIL: 'mailto:contact@edge.engineer',
 
   // Open Source
-  GITHUB_REPO: 'https://www.shadcnblocks.com/',
+  GITHUB_REPO: 'https://github.com/orgs/edgeengineer/repositories',
 };
