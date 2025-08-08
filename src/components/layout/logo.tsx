@@ -8,6 +8,7 @@ interface LogoProps {
   wordmarkClassName?: string;
   className?: string;
   href?: string;
+  wordmark?: boolean;
 }
 
 export default function Logo({
@@ -15,23 +16,27 @@ export default function Logo({
   wordmarkClassName,
   className,
   href = '/',
+  wordmark = true,
 }: LogoProps) {
   return (
     <Link href={href} className={cn('flex items-center gap-2.5', className)}>
-      <Image
-        src="/layout/logo-icon.svg"
-        alt="Scalar Logo"
-        width={22}
-        height={24}
-        className={cn('object-contain', iconClassName)}
-      />
-      <Image
-        src="/layout/logo-wordmark.svg"
-        alt="Scalar"
-        width={51.353}
-        height={14.009}
-        className={cn('object-contain', wordmarkClassName)}
-      />
+      {!wordmark && (
+        <Image
+          src="/layout/logo-icon.svg"
+          alt="Scalar Logo"
+          width={22}
+          height={24}
+          className={cn('object-contain', iconClassName)}
+        />)}
+      {wordmark && (
+        <Image
+          src="/layout/logo-wordmark.svg"
+          alt="Scalar"
+          width={60.353}
+          height={20.009}
+          className={cn('object-contain', wordmarkClassName)}
+        />
+      )}
     </Link>
   );
 }
