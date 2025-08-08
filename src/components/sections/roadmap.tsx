@@ -1,12 +1,23 @@
 'use client';
 
+import { useForm, ValidationError } from '@formspree/react';
 import { ClockFading, Package } from 'lucide-react';
 import Link from 'next/link';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { FaDiscord, FaGithub } from 'react-icons/fa6';
 
+import {
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '@/components/ui/alert-dialog';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import {
   Select,
   SelectContent,
@@ -15,6 +26,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Textarea } from '@/components/ui/textarea';
 import { EXTERNAL_LINKS } from '@/constants/external-links';
 import { cn } from '@/lib/utils';
 
@@ -274,7 +286,101 @@ function Item({ item, className }: { item: RoadmapItem; className?: string }) {
         <Link href={EXTERNAL_LINKS.GITHUB}>
           <FaGithub className="size-5" />
         </Link>
+        <InterestDialog itemTitle={item.title} />
       </div>
     </div>
+  );
+}
+
+function InterestDialog({ itemTitle }: { itemTitle: string }) {
+  const [state, handleSubmit] = useForm("mpwlkazk");
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Reset form when dialog closes after success
+  React.useEffect(() => {
+    if (state.succeeded) {
+      const timer = setTimeout(() => {
+        setIsOpen(false);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [state.succeeded]);
+
+  return (
+    <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
+      <AlertDialogTrigger asChild>
+        <Button variant="outline" size="sm">
+          I&apos;m interested
+        </Button>
+      </AlertDialogTrigger>
+      <AlertDialogContent className="max-w-md">
+        <AlertDialogHeader>
+          <AlertDialogTitle>Express Your Interest</AlertDialogTitle>
+          <AlertDialogDescription>
+            Let us know you&apos;re interested in: <span className="font-medium text-foreground">{itemTitle}</span>
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+
+        {state.succeeded ? (
+          <div className="flex flex-col items-center justify-center space-y-4 py-6">
+            <div className="text-secondary text-5xl">✓</div>
+            <p className="text-center text-lg font-medium">
+              We&apos;ll keep you up to date on this feature!
+            </p>
+            <p className="text-center text-muted-foreground text-sm">
+              Thanks for telling us your interest about {itemTitle}
+            </p>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Hidden field to track which feature */}
+            <input type="hidden" name="feature" value={itemTitle} />
+            
+            <div className="space-y-2">
+              <Label htmlFor="interest-email">Email Address</Label>
+              <Input
+                id="interest-email"
+                type="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
+              <ValidationError
+                prefix="Email"
+                field="email"
+                errors={state.errors}
+                className="text-destructive text-sm"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="interest-message">
+                Message <span className="text-muted-foreground">(optional)</span>
+              </Label>
+              <Textarea
+                id="interest-message"
+                name="message"
+                placeholder="Tell us more about your use case or requirements..."
+                rows={4}
+              />
+              <ValidationError
+                prefix="Message"
+                field="message"
+                errors={state.errors}
+                className="text-destructive text-sm"
+              />
+            </div>
+
+            <Button
+              type="submit"
+              disabled={state.submitting}
+              className="w-full"
+            >
+              {state.submitting ? 'Submitting...' : 'Submit Interest'}
+            </Button>
+          </form>
+        )}
+      </AlertDialogContent>
+    </AlertDialog>
   );
 }
