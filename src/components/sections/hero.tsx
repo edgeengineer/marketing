@@ -44,8 +44,8 @@ export function Hero() {
             </Link>
             <Logo wordmarkClassName='w-60 invert' />
             <h1 className="font-weight-display text-2xl leading-snug tracking-tighter md:text-3xl lg:text-5xl text-white">
-              Welcome to {' '}
-              <span className="block">the Edge</span>
+              The easiest and most powerful way to develop {' '}
+              <span className="block">the AI in the physical world.</span>
             </h1>
             <p className="text-white/80 mx-auto max-w-[700px] text-sm leading-relaxed md:text-lg lg:text-xl">
               Edge is the easiest and most powerful operating system for building Edge Computing systems. Build Robots, drones, self driving cars, intelligent cameras, terminals, printers, IoT projects as easy as building a mobile app.
@@ -81,7 +81,7 @@ export function Hero() {
           <iframe
             width="1320"
             height="743"
-            src="https://www.youtube.com/embed/u0P-g3Jsm8E?controls=1&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
+            src="https://www.youtube.com/embed/u0P-g3Jsm8E?controls=1&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&controls=0"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen

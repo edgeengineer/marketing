@@ -50,6 +50,75 @@ type NavItem = {
 
 const navigationItems: NavItem[] = [
   {
+    title: 'Home',
+    href: '/',
+  },
+  {
+    title: 'Features',
+    subitems: [
+      {
+        title: 'Content Management',
+        items: [
+          {
+            title: 'Visual Content Editor',
+            href: '/product',
+            description: 'Rich text, media, and structured field editing',
+            icon: Pencil,
+            isHighlighted: true,
+          },
+          {
+            title: 'Real-time Collaboration',
+            href: '/product',
+            description: 'Commenting, presence, autosave, versioning',
+            icon: Users,
+          },
+        ],
+      },
+      {
+        title: 'Developer Tools',
+        items: [
+          {
+            title: 'GraphQL & REST APIs',
+            href: '/product',
+            description: 'Auto-generated, blazing fast, type-safe APIs',
+            icon: Database,
+          },
+          {
+            title: 'Local Development',
+            href: '/product',
+            description: 'Run Edge locally with npx Edge dev',
+            icon: Terminal,
+          },
+          {
+            title: 'Code-first Models',
+            href: '/product',
+            description: 'Define models in code, sync to the UI',
+            icon: Code2,
+          },
+        ],
+      },
+      {
+        title: 'Integrations',
+        items: [
+          {
+            title: 'Next.js, Astro, etc.',
+            href: '/product',
+            description:
+              'Plug into your favorite frameworks instantly with Edge.',
+            icon: Box,
+          },
+          {
+            title: 'GitHub Sync',
+            href: '/product',
+            description:
+              'Backup and version content model files with GitHub integration.',
+            icon: GitBranch,
+          },
+        ],
+      },
+    ],
+  },
+  {
     title: 'Product',
     subitems: [
       {
@@ -303,6 +372,8 @@ const NavBarAction = ({
         </Button>
       </Link>
 
+
+
       <div className="flex flex-1 items-center gap-2">
         <div className="flex flex-1 items-center justify-center">
           {/* <ThemeToggle className="hidden lg:block" /> */}
@@ -313,12 +384,12 @@ const NavBarAction = ({
           </Link>
         </div>
         <Link
-          href="/signup"
+          href={EXTERNAL_LINKS.DOCUMENTATION}
           className="ms-3"
           onClick={() => setIsMenuOpen?.(false)}
         >
           <Button size="sm" variant="default" className="">
-            Start Free Trial
+            Docs
           </Button>
         </Link>
       </div>
