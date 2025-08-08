@@ -1,10 +1,16 @@
+'use client';
+
+import { useForm, ValidationError } from '@formspree/react';
 import { Mail } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { FaBook, FaDiscord, FaGithub, FaXTwitter } from 'react-icons/fa6';
 
 import { PlusSigns } from '@/components/icons/plus-signs';
 import { Meteors } from '@/components/magicui/meteors';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 import { EXTERNAL_LINKS } from '@/constants/external-links';
 
 const contactOptions = [
@@ -41,6 +47,8 @@ const contactOptions = [
 ];
 
 export function ContactSection() {
+  const [state, handleSubmit] = useForm("mqaqapkl");
+
   return (
     <section className="container">
       <div className="hidden border border-t-0 p-7.5 md:block" />
@@ -76,20 +84,77 @@ export function ContactSection() {
           ))}
         </div>
 
-        {/* Right Side - Chat Example */}
-        <div className="bordered-div-padding flex flex-col gap-4 mask-b-from-60% mask-b-to-95%">
-          <Image
-            src="/images/contact/chat-1.webp"
-            alt="Chat example"
-            width={620}
-            height={112}
-          />
-          <Image
-            src="/images/contact/chat-2.webp"
-            alt="Chat example"
-            width={620}
-            height={240}
-          />
+        {/* Right Side - Contact Form */}
+        <div className="bordered-div-padding">
+          {state.succeeded ? (
+            <div className="flex flex-col items-center justify-center space-y-4 py-8">
+              <div className="text-secondary text-5xl">✓</div>
+              <p className="text-lg font-medium">Thanks for your message!</p>
+              <p className="text-muted-foreground text-sm">We&apos;ll get back to you soon.</p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="space-y-2">
+                <Label htmlFor="email">Email Address</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  required
+                />
+                <ValidationError
+                  prefix="Email"
+                  field="email"
+                  errors={state.errors}
+                  className="text-destructive text-sm"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="name">Name</Label>
+                <Input
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                />
+                <ValidationError
+                  prefix="Name"
+                  field="name"
+                  errors={state.errors}
+                  className="text-destructive text-sm"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="message">Message</Label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tell us about your project or question..."
+                  rows={6}
+                  required
+                />
+                <ValidationError
+                  prefix="Message"
+                  field="message"
+                  errors={state.errors}
+                  className="text-destructive text-sm"
+                />
+              </div>
+
+              <Button
+                type="submit"
+                disabled={state.submitting}
+                className="w-full"
+                size="lg"
+              >
+                {state.submitting ? 'Sending...' : 'Send Message'}
+              </Button>
+            </form>
+          )}
         </div>
       </div>
       <div className="relative hidden overflow-hidden border-x border-t p-20 md:block">
