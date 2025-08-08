@@ -9,6 +9,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from '@/components/ui/hover-card';
+import { EXTERNAL_LINKS } from '@/constants/external-links';
 
 const teamMembers = [
   {
@@ -55,7 +56,7 @@ const teamMembers = [
     name: 'Ethan Derr',
     role: 'Engineer',
     company: 'Zerostatic',
-    image: '/images/blog/authors/joannis-orlandos.jpeg',
+    image: '/images/blog/authors/ethan-derr.jpg',
     github: '#',
     linkedin: '#',
     twitter: '#',
@@ -82,16 +83,16 @@ export function AboutMissionTeam() {
               hard for microcontrollers, NVidia Jetson, and Raspberry Pi? We built Edge to empower developers to build AI systems that run on the Edge, from microcontrollers to powerful AI hardware.
             </p>
             <p className="text-muted-foreground text-sm leading-relaxed md:text-base">
-              We built Edge to empower teams to model, edit, and{' '}
+              We built Edge to help developers and companies build the future of AI in the physical world.
               <span className="text-foreground font-medium">
-                ship content collaboratively
+                &nbsp;Begin your journey with Edge today
               </span>{' '}
-              — with the flexibility of{' '}
+              — with our
               <Link
-                href="#"
+                href={EXTERNAL_LINKS.DOCUMENTATION}
                 className="text-secondary font-medium hover:underline"
               >
-                your favorite dev tools
+                &nbsp;Documentation
               </Link>
               .
             </p>
