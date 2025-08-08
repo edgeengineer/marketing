@@ -47,7 +47,7 @@ const faqs: Record<Category, FAQ[]> = {
           You can install Edge with a single CLI command. It supports popular
           frameworks like Next.js, Nuxt, SvelteKit, and more. Use our official
           SDK or connect directly to the GraphQL API. See the{' '}
-          <Link href="#" className="text-teal underline">
+          <Link href="#" className="text-secondary underline">
             Quickstart Guide
           </Link>{' '}
           for full details.

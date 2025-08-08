@@ -1,13 +1,19 @@
 import { Mail } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaDiscord, FaGithub, FaXTwitter } from 'react-icons/fa6';
+import { FaBook, FaDiscord, FaGithub, FaXTwitter } from 'react-icons/fa6';
 
 import { PlusSigns } from '@/components/icons/plus-signs';
 import { Meteors } from '@/components/magicui/meteors';
 import { EXTERNAL_LINKS } from '@/constants/external-links';
 
 const contactOptions = [
+  {
+    icon: FaBook,
+    title: 'Documentation',
+    description: 'Get started with our comprehensive guides and API docs.',
+    href: EXTERNAL_LINKS.DOCUMENTATION,
+  },
   {
     icon: FaDiscord,
     title: 'Discord',
@@ -31,7 +37,7 @@ const contactOptions = [
     title: 'Email us directly',
     description: 'For enterprise pricing, partnerships, or anything else:',
     href: EXTERNAL_LINKS.EMAIL,
-  },
+  }
 ];
 
 export function ContactSection() {

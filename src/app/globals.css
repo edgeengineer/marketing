@@ -100,7 +100,7 @@
   --popover-foreground: oklch(0.18 0 0);
   --primary: oklch(0.18 0 0);
   --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.57 0.2328 264.07);
+  --secondary: #27b0c5;
   --secondary-foreground: oklch(0.99 0 0);
   --muted: oklch(0.9 0 0);
   --muted-foreground: oklch(0.6 0 0);
@@ -121,7 +121,7 @@
   --sidebar-foreground: oklch(0.99 0 0);
   --sidebar-primary: oklch(0.18 0 0);
   --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.57 0.2328 264.07);
+  --sidebar-accent: #27b0c5;
   --sidebar-accent-foreground: oklch(0.99 0 0);
   --sidebar-border: oklch(0.89 0 0);
   --sidebar-ring: oklch(0.708 0 0);
@@ -136,7 +136,7 @@
   --popover-foreground: oklch(0.99 0 0);
   --primary: oklch(0.99 0 0);
   --primary-foreground: oklch(0.09 0 0);
-  --secondary: oklch(0.57 0.2328 264.07);
+  --secondary: #27b0c5;
   --secondary-foreground: oklch(0.99 0 0);
   --muted: oklch(0.2 0 0);
   --muted-foreground: oklch(0.6 0 0);
@@ -157,7 +157,7 @@
   --sidebar-foreground: oklch(0.95 0 0);
   --sidebar-primary: oklch(0.99 0 0);
   --sidebar-primary-foreground: oklch(0.09 0 0);
-  --sidebar-accent: oklch(0.43 0.2328 264.07);
+  --sidebar-accent: #27b0c5;
   --sidebar-accent-foreground: oklch(0.95 0 0);
   --sidebar-border: oklch(0.11 0 0);
   --sidebar-ring: oklch(0.292 0 0);
@@ -191,6 +191,30 @@
 @layer utilities {
   .bordered-div-padding {
     @apply p-6 md:p-8 lg:p-10;
+  }
+  
+  .text-teal {
+    color: var(--color-teal);
+  }
+  
+  .hover\:text-teal:hover {
+    color: var(--color-teal);
+  }
+  
+  .bg-teal {
+    background-color: var(--color-teal);
+  }
+  
+  .hover\:bg-teal:hover {
+    background-color: var(--color-teal);
+  }
+  
+  .border-teal {
+    border-color: var(--color-teal);
+  }
+  
+  .hover\:border-teal:hover {
+    border-color: var(--color-teal);
   }
 }
 

@@ -267,7 +267,7 @@ export default async function BlogPost({
 
           <div className="bordered-div-padding mx-auto max-w-3xl">
             {/* Post content */}
-            <div className="prose prose-lg max-w-none [&>h2:first-of-type]:mt-0 prose-a:text-teal prose-a:no-underline prose-a:font-medium hover:prose-a:underline">
+            <div className="prose prose-lg max-w-none [&>h2:first-of-type]:mt-0 prose-a:text-secondary prose-a:no-underline prose-a:font-medium hover:prose-a:underline">
               {content}
             </div>
 
