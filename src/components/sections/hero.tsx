@@ -1,22 +1,26 @@
 'use client';
 
 import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
-import { FaArrowRight, FaDiscord } from 'react-icons/fa6';
+import { FaArrowRight, FaDiscord, FaGithub } from 'react-icons/fa6';
 
 import { Button } from '@/components/ui/button';
 import { MovingBorder } from '@/components/ui/moving-border';
 import { EXTERNAL_LINKS } from '@/constants/external-links';
 import { cn } from '@/lib/utils';
 
+import Logo from '../layout/logo';
+import Lifestream from '../magicui/lifestream';
+
 export function Hero() {
   return (
-    <section className="">
-      <div className="container">
+    <section className="relative">
+      <Lifestream className="absolute inset-0 w-full h-full -z-10" />
+      <div className="absolute inset-0 bg-black/40 -z-10" />
+      <div className="container relative z-10">
         <div className="bordered-div-padding relative flex flex-col items-center gap-8 border-x text-center md:gap-10 lg:gap-16 lg:!py-25">
           {/* Main Heading */}
-          <div className="max-w-4xl space-y-6 md:space-y-8 lg:space-y-12">
+          <div className="max-w-4xl space-y-6 md:space-y-8 lg:space-y-12 flex flex-col items-center">
             {/* Beta Banner */}
             <Link
               href="#"
@@ -38,14 +42,13 @@ export function Hero() {
                 <ArrowRight className="ml-1" />
               </Button>
             </Link>
-            <h1 className="font-weight-display text-2xl leading-snug tracking-tighter md:text-3xl lg:text-5xl">
-              Build Edge Computing {' '}
-              <span className="block">developer-first CMS.</span>
+            <Logo wordmarkClassName='w-60 invert' />
+            <h1 className="font-weight-display text-2xl leading-snug tracking-tighter md:text-3xl lg:text-5xl text-white">
+              Welcome to {' '}
+              <span className="block">the Edge</span>
             </h1>
-            <p className="text-muted-foreground mx-auto max-w-[700px] text-sm leading-relaxed md:text-lg lg:text-xl">
-              Edge gives you full control over content with a streamlined,
-              API-first experience—perfect for teams who want speed without
-              sacrificing flexibility.
+            <p className="text-white/80 mx-auto max-w-[700px] text-sm leading-relaxed md:text-lg lg:text-xl">
+              Edge is the easiest and most powerful operating system for building Edge Computing systems. Build Robots, drones, self driving cars, intelligent cameras, terminals, printers, IoT projects as easy as building a mobile app.
             </p>
           </div>
 
@@ -63,43 +66,26 @@ export function Hero() {
                 Community
               </Link>
             </Button>
+            <Button asChild variant="outline">
+              <Link href={EXTERNAL_LINKS.GITHUB}>
+                <FaGithub className="size-5" />
+                GitHub
+              </Link>
+            </Button>
           </div>
-          <div
-            className={cn(
-              'pointer-events-none absolute top-0 left-full hidden h-[calc(100%+1px)] w-screen overflow-hidden border-b text-start select-none lg:block',
-            )}
-            aria-hidden="true"
-            role="presentation"
-          >
-            <p className="p-4 whitespace-pre opacity-20">{`query MyQuery($slug: String = "") {
-  post(where: { slug: $slug }) {
-    slug
-    title
-    createdAt
-    excerpt
-    content {
-      html
-    }
-    coverImage {
-      altText
-      url
-      width
-      height
-    }
-  }
-}`}</p>
-          </div>
+
         </div>
       </div>
       <div className="container">
         <div className="bordered-div-padding flex items-center justify-center border">
-          <Image
-            src="/images/landing/hero.webp"
-            alt="Hero Image"
-            width={1320}
-            height={743}
-            priority
-            className="mask-b-from-55% mask-b-to-95%"
+          <iframe
+            width="1320"
+            height="743"
+            src="https://www.youtube.com/embed/u0P-g3Jsm8E?controls=1&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="w-full h-auto aspect-video mask-b-from-55% mask-b-to-95% border-0"
           />
         </div>
       </div>
