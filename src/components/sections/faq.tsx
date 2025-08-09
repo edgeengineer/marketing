@@ -1,7 +1,6 @@
 'use client';
 
 import { ChevronDown } from 'lucide-react';
-import Link from 'next/link';
 import { useState } from 'react';
 
 import { Meteors } from '@/components/magicui/meteors';
@@ -21,16 +20,24 @@ import {
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 type Category =
-  | 'Developers'
-  | 'Content Editing & Workflow'
-  | 'Cloud & Hosting'
-  | 'Community & Support';
+  | 'Developers — Getting started & prerequisites'
+  | 'Developers — Build, deploy & debug'
+  | 'Developers — Frameworks, data & connectivity'
+  | 'Developers — OS, devices & updates'
+  | 'Businesses — What Edge & Edge CIC do'
+  | 'Businesses — Security & compliance'
+  | 'Businesses — Operations & lifecycle'
+  | 'Businesses — Adoption, ROI & integration';
 
 const categories: Category[] = [
-  'Developers',
-  'Content Editing & Workflow',
-  'Cloud & Hosting',
-  'Community & Support',
+  'Developers — Getting started & prerequisites',
+  'Developers — Build, deploy & debug',
+  'Developers — Frameworks, data & connectivity',
+  'Developers — OS, devices & updates',
+  'Businesses — What Edge & Edge CIC do',
+  'Businesses — Security & compliance',
+  'Businesses — Operations & lifecycle',
+  'Businesses — Adoption, ROI & integration',
 ];
 
 type FAQ = {
@@ -39,23 +46,14 @@ type FAQ = {
 };
 
 const faqs: Record<Category, FAQ[]> = {
-  Developers: [
+  'Developers — Getting started & prerequisites': [
     {
-      question: 'How do I install Edge in my project?',
-      answer: (
-        <>
-          You can easily install Edge using `brew` on macOS.
-          <Link href="https://docs.edge.engineer/" className="text-secondary underline" target='_blank'>
-            Quickstart Guide
-          </Link>{' '}
-          for full details.
-        </>
-      ),
+      question: 'What is Edge in one sentence?',
+      answer: 'Edge is a Swift-first OS and development stack that makes building for robots, drones, and other edge computers as easy as building a mobile app.',
     },
     {
-      question: 'Is Edge open source?',
-      answer:
-        'Yes, EdgeOS, Edge Agent and Edge CLI and all the public frameworks are fully open source under the MIT license. You can view, modify, and contribute to the codebase on GitHub. However, our Edge Command Intelligence and Control product is a commercial offering with a subscription model.',
+      question: 'What do I need to start building?',
+      answer: 'A Mac or Linux dev machine, Swift 6 toolchain, and a supported edge device (e.g., Raspberry Pi, Jetson). Cross-compiling targets EdgeOS binaries from macOS or Linux.',
     },
     {
       question: 'Why does Edge only support Swift?',
@@ -88,54 +86,166 @@ const faqs: Record<Category, FAQ[]> = {
       ),
     },
     {
-      question: 'What kind of AI models can you run on EdgeOS?',
-      answer: (
-        <>
-          We support MLX by Apple, which is an Apache 2.0 array framework machine exchange format. Originally designed purely for Apple Silicon with unified memory, MLX has rapidly grown to include support for CUDA for NVIDIA devices like the Jetson series and soon with ROCm for AMD devices.
-          <br /><br />
-          We recommend visiting{' '}
-          <Link href="https://huggingface.co/mlx-community" className="text-secondary underline" target="_blank">
-            https://huggingface.co/mlx-community
-          </Link>{' '}
-          for AI models.
-        </>
-      ),
+      question: 'Can I build without adopting EdgeOS yet?',
+      answer: 'Yes—the debugger, deployer, and frameworks are designed to work on major Linux distros, while EdgeOS delivers the best experience.',
+    },
+    {
+      question: 'How do I run my first app on device?',
+      answer: 'Plug your device in over USB-C, build, and deploy—Edge aims for a "press Command-R" workflow like mobile.',
     },
   ],
-  'Content Editing & Workflow': [
+  'Developers — Build, deploy & debug': [
     {
-      question: 'Can I create custom content workflows?',
-      answer:
-        'Yes, Edge allows you to define custom workflows for content creation, review, and publishing. You can set up multiple stages with granular permissions for different team members.',
+      question: 'How is debugging on devices handled?',
+      answer: 'EdgeOS includes an LLDB-server so you can attach, set breakpoints, and inspect state over USB, Wi-Fi, or the internet.',
     },
     {
-      question: 'Does Edge support real-time collaboration?',
-      answer:
-        'Yes, our Cloud plan includes real-time collaboration features, allowing multiple team members to work on content simultaneously with live updates and conflict resolution.',
-    },
-  ],
-  'Cloud & Hosting': [
-    {
-      question: 'What are the differences between self-hosted and cloud?',
-      answer:
-        'The self-hosted version gives you complete control over your infrastructure but requires you to manage hosting, backups, and scaling. The Cloud version is fully managed with additional features like real-time collaboration, role-based access controls, and built-in CDN.',
+      question: 'What IDE support will be available?',
+      answer: 'We&apos;re targeting a lightweight VS Code extension that speaks LSP and works with the Edge tooling for build/deploy/debug.',
     },
     {
-      question: 'Can I migrate from self-hosted to cloud later?',
-      answer:
-        'Yes, we provide migration tools to easily transfer your content and settings from a self-hosted Edge instance to our cloud platform.',
+      question: 'What is the Edge Development Agent?',
+      answer: 'A service on the device that orchestrates SSH/SCP/LLDB-server, app lifecycle, and secure IDE communication—so sessions "just work."',
+    },
+    {
+      question: 'Can I debug remotely in the field?',
+      answer: 'Yes—LLDB-server plus the agent enable remote attach flows; CIC augments this with logs, crash reports, and diagnostics.',
+    },
+    {
+      question: 'Is hot-reload supported?',
+      answer: 'The goal is fast, iterative deploys (think Cmd-R). Full hot-reload semantics may vary by target and runtime constraints.',
     },
   ],
-  'Community & Support': [
+  'Developers — Frameworks, data & connectivity': [
     {
-      question: 'Where can I get help with Edge?',
-      answer:
-        'For the open-source version, we have an active community on Discord and GitHub. Cloud customers receive email support and access to our knowledge base. Enterprise plans include dedicated support channels and SLAs.',
+      question: 'What core libraries do I get?',
+      answer: 'SwiftNIO for async I/O, Crypto, and platform APIs; plus Edge-specific networking, Bluetooth, audio/vision, and more.',
     },
     {
-      question: 'How can I contribute to Edge?',
-      answer:
-        'We welcome contributions! You can contribute code, report bugs, suggest features, or help improve our documentation. Check our GitHub repository for contribution guidelines.',
+      question: 'How do I run AI models on-device?',
+      answer: 'Use EdgeAI: load ONNX or Torch models and run via a simple, unified predictor API.',
+    },
+    {
+      question: 'Does Edge support store-and-forward or ad-hoc meshes?',
+      answer: 'Yes—our DTN layer (based on Bundle Protocol 7) supports multi-hop, disruption-tolerant messaging with pluggable routing.',
+    },
+    {
+      question: 'What about real-time video/control over multiple links?',
+      answer: 'Multipath RTP lets you split media/control across paths (e.g., Starlink + 5G + LTE) for resilience and throughput.',
+    },
+    {
+      question: 'Is there a higher-level streams client?',
+      answer: 'Yes—Edge Streams is a high-level wrapper (around Apache Pulsar) for real-time and historical analytics pipelines.',
+    },
+  ],
+  'Developers — OS, devices & updates': [
+    {
+      question: 'What&apos;s special about EdgeOS?',
+      answer: 'It ships ready-to-build with lldb-server, BlueZ, DNS-SD, SQLite, Swiftly, and more—pre-configured for edge use cases.',
+    },
+    {
+      question: 'What is the update model?',
+      answer: 'We curate stable releases on top of Arch&apos;s rolling base—fresh developer stacks with production-grade stability for fleets.',
+    },
+    {
+      question: 'Do you support non-Linux microcontrollers today?',
+      answer: 'Focus is Linux-class edge hardware now; embedded targets beyond Linux are on the longer-term roadmap.',
+    },
+    {
+      question: 'Can apps be portable to iOS/Android?',
+      answer: 'Much of the Swift code is designed to be portable; cross-platform UI targets Linux, macOS, iOS, Android, Wasm, and more.',
+    },
+    {
+      question: 'How are certificates/identity handled?',
+      answer: 'CIC centralizes device identity, keys, and cert lifecycle with Swift-Certificates and automated rotation.',
+    },
+  ],
+  'Businesses — What Edge & Edge CIC do': [
+    {
+      question: 'What problems does Edge solve for us?',
+      answer: 'It standardizes edge software so teams ship faster—one language, one toolchain, one deploy/debug path—across robots, kiosks, sensors, and more.',
+    },
+    {
+      question: 'What is CIC (Command, Intelligence & Control)?',
+      answer: 'CIC is your fleet command center: monitor devices, push updates, stream data, visualize digital twins, and enforce controls.',
+    },
+    {
+      question: 'How does CIC differ from traditional MDM?',
+      answer: 'It&apos;s built for edge/robotics workloads—telemetry analytics, OTA OS & app rollouts, crash diagnostics, real-time streams, and secure remote actions.',
+    },
+    {
+      question: 'Is Edge open or proprietary?',
+      answer: 'EdgeOS and the Edge Framework are planned to be open source; CIC adds enterprise fleet capabilities on top.',
+    },
+    {
+      question: 'Where can we deploy?',
+      answer: 'On your devices anywhere (factory, field, satellite link), with CIC running in your cloud of choice via standard connectors.',
+    },
+  ],
+  'Businesses — Security & compliance': [
+    {
+      question: 'How are devices authenticated?',
+      answer: 'CIC manages identity with PKI, automates certificate rotation, and enforces mutual TLS for device-to-cloud/device-to-device trust.',
+    },
+    {
+      question: 'Can we restrict who can send commands to devices?',
+      answer: 'Yes—fine-grained access policies govern remote control and emergency actions.',
+    },
+    {
+      question: 'Do you support regulated environments?',
+      answer: 'CIC&apos;s crypto stack is designed for FIPS-aligned policies and auditability; talk to us about your specific certification needs.',
+    },
+    {
+      question: 'How do you handle vulnerabilities?',
+      answer: 'Curated EdgeOS releases, staged rollouts, and rollbacks minimize risk; CIC provides visibility and safe remediation paths.',
+    },
+    {
+      question: 'Is data encrypted in motion?',
+      answer: 'Yes—mTLS for transport and optional end-to-end encryption for sensitive streams.',
+    },
+  ],
+  'Businesses — Operations & lifecycle': [
+    {
+      question: 'How do updates work across thousands of devices?',
+      answer: 'CIC does staged OTA OS updates and canary app releases with automatic rollback when needed.',
+    },
+    {
+      question: 'Can we get crash reports and logs from the field?',
+      answer: 'Yes—CIC collects structured crash reports, logs, and runtime metrics so engineers can reproduce issues quickly.',
+    },
+    {
+      question: 'Do you support real-time monitoring?',
+      answer: 'Live metrics/log/video streaming is built-in and optimized for low-bandwidth or high-latency links.',
+    },
+    {
+      question: 'Can we see our fleet on a map or in 3D?',
+      answer: 'Yes—digital twins let you visualize devices, overlay health/AI predictions, and drill into per-device telemetry.',
+    },
+    {
+      question: 'How do we get analytics dashboards?',
+      answer: 'CIC ingests telemetry via Edge Streams and supports ad-hoc queries, alerts, and exports to your warehouse/Lake.',
+    },
+  ],
+  'Businesses — Adoption, ROI & integration': [
+    {
+      question: 'How fast can teams get productive?',
+      answer: 'Standardizing on Swift + pre-configured OS/tools shrinks setup from weeks to hours and reduces "stack sprawl."',
+    },
+    {
+      question: 'Will this work with our existing data stack (Snowflake, S3, Kafka, Databricks)?',
+      answer: 'Yes—first-class connectors are supported for export and integration.',
+    },
+    {
+      question: 'Are we locked in?',
+      answer: 'EdgeOS/Framework are open; CIC uses open formats/protocols so you can integrate or migrate as needed.',
+    },
+    {
+      question: 'What skills do we need to hire for?',
+      answer: 'Swift developers with systems/networking or robotics experience—Edge reduces the need for multi-language specialists.',
+    },
+    {
+      question: 'What&apos;s the path to pilot → production?',
+      answer: 'Start with a small device cohort, enable CIC telemetry and OTA, validate remote controls/alerts, then scale with staged rollouts.',
     },
   ],
 };
@@ -150,7 +260,7 @@ export function FAQSection() {
 
         <div className="bordered-div-padding border-x">
           <h1 className="font-weight-display text-2xl leading-snug tracking-tighter md:text-3xl lg:text-5xl">
-            FAQs
+            Edge FAQ
           </h1>
           <div className="mt-6 block md:hidden">
             <Select
@@ -186,9 +296,9 @@ export function FAQSection() {
             onValueChange={(value) => setActiveTab(value as Category)}
             className=""
           >
-            <TabsList className="flex gap-3">
+            <TabsList className="flex flex-wrap gap-3">
               {categories.map((category) => (
-                <TabsTrigger key={category} value={category}>
+                <TabsTrigger key={category} value={category} className="text-xs md:text-sm">
                   {category}
                 </TabsTrigger>
               ))}
